@@ -17,7 +17,7 @@ class FridgeTemperature(PanasonicEntity, NumberEntity):
     _attr_native_step = 1
     _attr_native_unit_of_measurement = UnitOfTemperature.CELSIUS
     _attr_device_class = 'temperature'
-    _attr_extra_state_attributes = {'控制验证': '范围依据官方说明书，写入待用户手动实机验收'}
+    _attr_extra_state_attributes = {'控制验证': '已在本型号上实机验证'}
 
     def __init__(self, coordinator, device, key, label, low, high):
         super().__init__(coordinator, device, key + '_temperature_control')

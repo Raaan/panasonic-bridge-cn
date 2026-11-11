@@ -1,30 +1,30 @@
 {
-  "title": "松下智家（本地验证）",
+  "title": "Panasonic China",
   "config": {
     "step": {
       "user": {
-        "title": "接入松下智家",
-        "description": "接入松下设备及状态。净化器电源已经实机验证；空调及其他功能提供待用户手动验证的控制入口。只有显式操作才发送命令，启动和轮询不控制设备，命令不重试。账号密码保存在本机 HA 配置，请保护配置和备份。",
+        "title": "Connect Panasonic China",
+        "description": "Sign in to discover supported appliances. Startup and state updates do not send controls. Entity actions or your HA automations can operate devices. HA stores your credentials; protect the configuration and backups.",
         "data": {
-          "username": "松下账号",
-          "password": "松下密码"
+          "username": "Panasonic account",
+          "password": "Password"
         }
       },
       "reconfigure": {
-        "title": "更换松下账号或密码",
-        "description": "在本机输入新的松下账号和密码。先只读验证登录及已支持设备，验证成功后才保存并重新加载集成；失败不会覆盖旧凭据。同一设备的实体标识保持不变。",
+        "title": "Change account or password",
+        "description": "New credentials are saved and the integration reloaded after login and device checks pass. Failed checks leave the old configuration in place. The same device keeps its entity identifiers.",
         "data": {
-          "username": "松下账号",
-          "password": "新的松下密码"
+          "username": "Panasonic account",
+          "password": "New password"
         }
       }
     },
     "error": {
-      "cannot_connect": "松下接入失败（{detail}）。此处只显示请求阶段、错误类型及数字错误码，不含凭据或原始响应；旧配置未更改。",
-      "no_devices": "未发现已验证型号：F-75C5PJD / CS-JM35K410Q。"
+      "cannot_connect": "Connection failed ({detail}). Check your account and network. The existing configuration is unchanged.",
+      "no_devices": "No supported device found. Check the model and protocol: F-75C5PJD / AirconCommon-2024-01 / Fridge-19."
     },
     "abort": {
-      "already_configured": "此账号已配置。"
+      "already_configured": "This account has already been added."
     }
   }
 }

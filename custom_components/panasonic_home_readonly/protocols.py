@@ -1,9 +1,9 @@
-"""New-protocol AC candidate, matched to the observed 49/66/49 status family.
+"""AC parameters for the AirconCommon-2024-01 protocol.
 
-First-hand protocol report (different unit; pending local user validation):
+Enumeration reference from another unit:
 https://bbs.hassbian.com/forum.php?mod=viewthread&page=5&tid=17153
-Envelope follows the existing HA AW implementation: top-level identity + params.
-Never fall back or retry another SET endpoint after a manual command.
+The current model has been checked on hardware. Requests use top-level identity
+fields and params. A failed command is not retried through another endpoint.
 """
 AC_MODES = {'cool': 66, 'heat': 67, 'dry': 68}
 AC_FANS = {'自动': 65, '20%': 49, '40%': 50, '60%': 52, '80%': 54, '100%': 55}

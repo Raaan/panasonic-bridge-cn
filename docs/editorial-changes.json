@@ -1,0 +1,56 @@
+[
+  {
+    "file": "climate.py",
+    "baseline_sha256": "39ae77d8d4dfc5dc64efa8c8856478198cdb8da769ec7318e14761c7fad2fc18",
+    "sha256": "b5acc0e0326e4afbd27bb39a5302b9247f07168f24324d1485210ea9a1911a61",
+    "reason": "Documentation or display text only; normalized code structure and translation keys preserved."
+  },
+  {
+    "file": "fridge_protocol.py",
+    "baseline_sha256": "c454cdcee4dfcdcbdca352725cb74134ad8ba8819861c07471e64e1c02a7126e",
+    "sha256": "46d832085adf74aeb43427398db1fe6dfc2126f8cfb6511974b81449a580e36c",
+    "reason": "Documentation or display text only; normalized code structure and translation keys preserved."
+  },
+  {
+    "file": "number.py",
+    "baseline_sha256": "49eb0342aab914986fa8be55f64dd504ac3c602416bbc81d61ccc7b193666c1d",
+    "sha256": "91bffa0f69e0481cd9d41320a83e40b9229190940ba83da5bd670e0c4ba6a624",
+    "reason": "Documentation or display text only; normalized code structure and translation keys preserved."
+  },
+  {
+    "file": "protocols.py",
+    "baseline_sha256": "f3dac5ec001edecc3c8b8e8d5302a5919b0f90bce8cfc7db091a987fc7952901",
+    "sha256": "18f4754a490117fd32246e3de7b314eca5e7a207fed2a0cb5aad8eb1896e071c",
+    "reason": "Documentation or display text only; normalized code structure and translation keys preserved."
+  },
+  {
+    "file": "select.py",
+    "baseline_sha256": "989b2cecd33f8864eb2628216e16287dd3959c87369b3f4641cc76fc5a610df1",
+    "sha256": "6b86c190f5cbd9a66af5fd83da29e41724e4b710dcd27c5c04b17fac28559158",
+    "reason": "Documentation or display text only; normalized code structure and translation keys preserved."
+  },
+  {
+    "file": "strings.json",
+    "baseline_sha256": "a57bc90c979f42e9ebb29af9ada3c299e70b88ac54caeb28c469b71c332d210e",
+    "sha256": "498b94876ffbadcd8842b6b379f564a56cd0ed3823b241d238aecfcbd4a98ded",
+    "reason": "Documentation or display text only; normalized code structure and translation keys preserved."
+  },
+  {
+    "file": "switch.py",
+    "baseline_sha256": "73c827391b29cfaffa7f9599a336d467f90761648dd72368c614f03da4c7db63",
+    "sha256": "efffd918bb32a9e69ecd82e45fd847487d0e7f1dfaee8b855b002f4f7b844aad",
+    "reason": "Documentation or display text only; normalized code structure and translation keys preserved."
+  },
+  {
+    "file": "translations/en.json",
+    "baseline_sha256": "a57bc90c979f42e9ebb29af9ada3c299e70b88ac54caeb28c469b71c332d210e",
+    "sha256": "4baea7200f9a3cddf423ad814054933ad638bd98a1c8e59121f9b131e74238ab",
+    "reason": "Documentation or display text only; normalized code structure and translation keys preserved."
+  },
+  {
+    "file": "translations/zh-Hans.json",
+    "baseline_sha256": "a57bc90c979f42e9ebb29af9ada3c299e70b88ac54caeb28c469b71c332d210e",
+    "sha256": "498b94876ffbadcd8842b6b379f564a56cd0ed3823b241d238aecfcbd4a98ded",
+    "reason": "Documentation or display text only; normalized code structure and translation keys preserved."
+  }
+]

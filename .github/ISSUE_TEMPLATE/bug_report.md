@@ -1,21 +1,23 @@
 ---
-name: Bug report / 问题报告
-about: Report a problem using sanitized information only
+name: Bug report / 问题反馈
+about: Describe a problem with the model, steps and sanitized results
 ---
 
-## 环境
+## 使用环境 / Environment
+
 HA 版本：
 整合版本：
-设备型号 / 类别 / 子类型：
+设备型号、类别和子类型：
 
-## 问题与复现步骤
+## 出现的问题 / What happened
 
-## 预期与实际结果
-区分 HA 显示、官方 App 显示和实体表现：
+请说明操作步骤、预期结果和实际结果，尽量分别描述 HA、官方 App 和设备的表现。
 
-## 安全错误摘要
-仅提供错误阶段、类别与数字码；请勿附完整日志。
+## 错误信息 / Error
 
-## 脱敏确认
-- [ ] 没有账号、会话、token、MAC、deviceId、家庭地址或真实实体 UID。
-- [ ] 没有附原始响应、HA 配置、数据库或家庭截图。
+可填写请求阶段、错误类型及数字码，或附必要的脱敏片段。
+
+## 提交前检查 / Before posting
+
+- [ ] 已删除账号、会话、token、MAC、deviceId 和家庭信息。
+- [ ] 没有附上完整 HA 配置、数据库或原始云端响应。

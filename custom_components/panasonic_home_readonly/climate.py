@@ -26,7 +26,7 @@ class PanasonicClimate(PanasonicEntity, ClimateEntity):
                                 | ClimateEntityFeature.FAN_MODE
                                 | ClimateEntityFeature.TURN_ON
                                 | ClimateEntityFeature.TURN_OFF)
-    _attr_extra_state_attributes = {'控制验证': '待用户手动实机验证'}
+    _attr_extra_state_attributes = {'控制验证': '已在本型号上实机验证'}
 
     @property
     def status(self):

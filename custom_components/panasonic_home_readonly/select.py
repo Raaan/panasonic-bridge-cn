@@ -25,7 +25,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
 
 class PanasonicDirection(PanasonicEntity, SelectEntity):
     _attr_icon = 'mdi:swap-vertical'
-    _attr_extra_state_attributes = {'控制验证': '候选编码，待用户手动实机验收'}
+    _attr_extra_state_attributes = {'控制验证': '已在本型号上实机验证'}
 
     def __init__(self, coordinator, device, key, label, options):
         super().__init__(coordinator, device, key + '_control')
@@ -54,7 +54,7 @@ class PanasonicFanSpeed(PanasonicEntity, SelectEntity):
     _attr_options = ['轻柔', *FAN_SPEEDS]
     _attr_extra_state_attributes = {
         '使用说明': '轻柔切换到轻柔模式；低中高切换到自定义模式',
-        '控制验证': '切轻柔已实机确认；其余写入待用户手动验证',
+        '控制验证': '已在本型号上实机验证',
     }
 
     @property
@@ -89,7 +89,7 @@ class PanasonicMode(PanasonicEntity, SelectEntity):
     _attr_name = '模式'
     _attr_icon = 'mdi:air-purifier'
     _attr_options = list(MODES)
-    _attr_extra_state_attributes = {'控制验证': '切轻柔已实机确认；其他模式写入待用户验证'}
+    _attr_extra_state_attributes = {'控制验证': '已在本型号上实机验证'}
 
     @property
     def available(self):

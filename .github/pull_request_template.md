@@ -1,12 +1,18 @@
-## Problem and behavior
+## What this changes
 
-## Affected models and protocol sources
+Describe the problem, affected models and behavior after the change.
 
-## Validation
-- [ ] Existing offline tests pass.
-- [ ] New payloads use synthetic identifiers.
-- [ ] Implemented, observed and physically verified behavior are distinguished.
-- [ ] Provenance, licenses and documentation are updated.
-- [ ] No credentials, raw responses or personal HA files are included.
+## Sources and testing
 
-## Limits and migration
+- Code or protocol sources:
+- Offline checks:
+- HA environment checks:
+- Device, app and physical results, if tested:
+- Parts not yet tested:
+
+## Before submitting
+
+- [ ] Existing checks pass and fixtures use synthetic data.
+- [ ] Relevant documentation and attribution are updated.
+- [ ] Existing entity compatibility is preserved or a migration is explained.
+- [ ] Private credentials, identifiers and home configuration are excluded.
