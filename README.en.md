@@ -8,11 +8,17 @@ A community Home Assistant integration for selected Panasonic appliances using t
 
 ## Why this project exists
 
-The project started with a practical need to connect Panasonic appliances to Home Assistant. That work produced reusable knowledge about device discovery, cloud request formats, state calibration, and control verification. Opening the code and sanitized debugging notes can help other users avoid repeating the same investigation.
+The project grew out of building a real Home Assistant home environment. The aim was to bring appliances from different brands—air conditioners, an air purifier, a refrigerator, and laundry appliances—into one platform for status monitoring and control, with a foundation for future cross-brand automation.
 
-The goal is to invite more people to participate and help more Panasonic device owners. Device owners can contribute observations and manual verification; developers can fix issues or add model support; other contributors can improve documentation, translations, and setup instructions. Progress should depend on reviewable community evidence rather than a single maintainer's devices and available time.
+During that setup, brands such as Midea had usable built-in or established community integration paths. Panasonic was expected to fit into the same environment, but the mainland China models being used were not directly covered by the existing approaches tried at the time. Some appliance categories lacked an adapter; others used protocols that differed from already-supported controllers. This left a practical gap in the unified home setup. This describes the experience with those regions, models, and features; support for other Panasonic regions, product lines, and projects must be assessed separately.
 
-Use, modification, forks, and contributions are welcome under the applicable licenses. Supported models and verification remain limited. A result from one appliance must not be presented as compatibility with all Panasonic appliances.
+Work therefore began on filling that gap, building on existing community projects and public protocol knowledge. The process started with login and discovery, then checked real state fields, control values, request formats, and read-back behavior. Purifier, AC, and refrigerator adapters gradually became part of the Home Assistant environment. The resulting knowledge includes successes and failure cases: incorrect category assumptions, unsuitable request envelopes, incomplete cached state, reversed lamp semantics, and ambiguous confirmation during network outages.
+
+Opening the project is intended to make this work useful to others with similar needs. Users can reuse adapters and debugging knowledge instead of starting over, and additional models can join unified home setups when their compatibility is supported by evidence. Other brands should continue to use their own mature integrations. This repository covers the Panasonic scope listed below; cross-brand automation remains a broader home-system goal.
+
+More participants are welcome. Device owners can contribute observations and manual checks, developers can fix bugs or add models, and other contributors can improve documentation, translations, and setup guidance. One maintainer has limited hardware and time; community participation can broaden the evidence while keeping it reviewable and reproducible.
+
+Use, modification, forks, and contributions are welcome under the applicable licenses. Existing community attribution is retained. Supported models and verification remain limited: a result from one appliance must not be presented as compatibility with all Panasonic appliances. Publishing the code, debugging process, and known boundaries should make the work easier to continue and its reliability easier to assess.
 
 ## Supported scope
 

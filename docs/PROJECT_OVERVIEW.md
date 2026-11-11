@@ -2,7 +2,9 @@
 
 ## 中文
 
-Panasonic Bridge CN 是面向中国大陆松下智家云端的 Home Assistant 社区整合。它起于实际设备接入需求，目前整理了指定净化器、空调协议族和 Fridge-19 冰箱的适配代码、离线测试及脱敏调试经验。
+Panasonic Bridge CN 是面向中国大陆松下智家云端的 Home Assistant 社区整合。它起于搭建统一家庭环境的实际需求：希望让不同品牌的家电进入同一个 HA 平台，便于查看状态、操作设备，并为未来跨品牌联动打基础。
+
+搭建时，美的等设备已有可用的内置或成熟社区接入路径，手头使用的中国大陆松下型号却在当时尝试的方案中遇到了适配缺口。类别支持不足、协议与已有控制器不同等问题，使这些设备无法直接加入原先设想的统一环境。因此开始复用已有社区成果，补充净化器、空调和 Fridge-19 冰箱的适配、离线测试与脱敏调试经验。这是特定地区与型号的实际经历，不代表所有松下产品都没有 HA 接入方式。
 
 开源的目标是让已有工作可以被复用，帮助更多松下设备用户，也让更多人参与维护。设备用户可以提供状态对照和手动验收，开发者可以修复问题或适配新型号，其他贡献者可以完善文档、翻译与使用说明。我们希望把分散的排障经验变成可审阅、可复现的社区资料。
 
@@ -14,7 +16,9 @@ Panasonic Bridge CN 是面向中国大陆松下智家云端的 Home Assistant �
 
 ## English
 
-Panasonic Bridge CN is a community Home Assistant integration for Panasonic's mainland China smart-home cloud. It grew out of a practical appliance-integration need and currently packages adapters for a specific purifier, an AC protocol family, and Fridge-19 refrigerators, together with offline tests and sanitized debugging knowledge.
+Panasonic Bridge CN is a community Home Assistant integration for Panasonic's mainland China smart-home cloud. It grew out of building a unified home environment: bringing different appliance brands into one HA platform for status monitoring, control, and a foundation for future cross-brand automation.
+
+During setup, brands such as Midea had usable built-in or established community integration paths, while the mainland China Panasonic models being used encountered gaps in the approaches tried at the time. Missing appliance-category adapters and protocols that differed from existing controllers prevented those devices from fitting directly into the intended setup. Work began on extending existing community knowledge with purifier, AC, and Fridge-19 refrigerator adapters, offline tests, and sanitized debugging notes. This is a model- and region-specific experience, not a claim that all Panasonic products lack HA integration.
 
 The goal of opening the project is to make existing work reusable, help more Panasonic appliance owners, and invite more people to maintain it. Device owners can contribute state observations and manual verification; developers can fix bugs or add model support; other contributors can improve documentation, translation, and setup guidance. We want to turn isolated troubleshooting experience into reviewable, reproducible community knowledge.
 
