@@ -1,0 +1,67 @@
+{
+  "baseline_version": "0.5.0",
+  "target_version": "0.5.1.dev0",
+  "baseline_repository_commit": "305f7a739920f53d29ab85bb4875547b180757ee",
+  "changes": [
+    {
+      "file": "__init__.py",
+      "baseline_sha256": "3c4f1a3c6299a952d114265cda67c90994ce0462e0372f4744bbe6a741ae503c",
+      "sha256": "532e78ac04b6d67338f78624f4a92918a83150faef713565f9288a8a2373bd0e",
+      "reason": "Correct coordinator description and display name; control methods unchanged."
+    },
+    {
+      "file": "client.py",
+      "baseline_sha256": "d739748c9988c0bd97eb6c27fb26a31d7f017a4a7c0abf53dd82a9654de4c8e9",
+      "sha256": "69f2a8c7cf408b58a049ea0462a348f91db3f37728d4dccbb8d889f376c2c3c5",
+      "reason": "Correct outdated read-only module description; client logic unchanged."
+    },
+    {
+      "file": "climate.py",
+      "baseline_sha256": "39ae77d8d4dfc5dc64efa8c8856478198cdb8da769ec7318e14761c7fad2fc18",
+      "sha256": "9f27a87008c5cc49f92366f815464c86c7e73169838704acd914b078eb8accfe",
+      "reason": "Update maintainer verification label and module description; payload logic unchanged."
+    },
+    {
+      "file": "manifest.json",
+      "baseline_sha256": "0ac8f81a9e905281c748d06ed2b19244a27227a77b1e3443fdb57223272ad5ec",
+      "sha256": "bb0dba0d3ca670ed933ebf14e16a4c5d678f3bcb637295d45d7c44cf675ec35b",
+      "reason": "Mark development version 0.5.1.dev0; preserve historical domain."
+    },
+    {
+      "file": "select.py",
+      "baseline_sha256": "989b2cecd33f8864eb2628216e16287dd3959c87369b3f4641cc76fc5a610df1",
+      "sha256": "299b20deb494885a7a6de633f3644ac4e34b23d2dacb520c6e3cacbf0c2e1077",
+      "reason": "Update maintainer verification labels and module description; control logic unchanged."
+    },
+    {
+      "file": "strings.json",
+      "baseline_sha256": "a57bc90c979f42e9ebb29af9ada3c299e70b88ac54caeb28c469b71c332d210e",
+      "sha256": "cd8a2f41968a6b744e4877c4f4f377f67c3d5e305d1b369334c63372af15911e",
+      "reason": "Refresh maintainer verification and include refrigerator protocol in setup feedback."
+    },
+    {
+      "file": "switch.py",
+      "baseline_sha256": "73c827391b29cfaffa7f9599a336d467f90761648dd72368c614f03da4c7db63",
+      "sha256": "c8db9f46dc00e3fde4ee8582a7278f11b4992e90345fd73a42fadf6a9eda2f3d",
+      "reason": "Update purifier/AC verification labels and module description; refrigerator status and control logic unchanged."
+    },
+    {
+      "file": "transport.py",
+      "baseline_sha256": "d45458bb93dda086bc3b1d5edb77e253460bf31cb748df3fe3a0e5385121cf7f",
+      "sha256": "a47a8f12b0cc98a3898836f6b583d01a3449a7f0b1440ac672a0d3ecd5c21c90",
+      "reason": "Reject missing, malformed or replaced certificate before constructing the TLS transport; control payloads unchanged."
+    },
+    {
+      "file": "translations/en.json",
+      "baseline_sha256": "a57bc90c979f42e9ebb29af9ada3c299e70b88ac54caeb28c469b71c332d210e",
+      "sha256": "c5fe58ade23ed335069ce01443e24021713ca59252bf77283f73b28795275612",
+      "reason": "Provide actual English configuration-flow text with the same schema."
+    },
+    {
+      "file": "translations/zh-Hans.json",
+      "baseline_sha256": "a57bc90c979f42e9ebb29af9ada3c299e70b88ac54caeb28c469b71c332d210e",
+      "sha256": "cd8a2f41968a6b744e4877c4f4f377f67c3d5e305d1b369334c63372af15911e",
+      "reason": "Refresh maintainer verification and supported protocol text."
+    }
+  ]
+}

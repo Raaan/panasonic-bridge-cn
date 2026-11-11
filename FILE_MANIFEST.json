@@ -16,8 +16,8 @@
   },
   {
     "path": ".github/workflows/offline.yml",
-    "bytes": 464,
-    "sha256": "07ded816e9a761a6e3f00889aa83cb4aee34dabf0b8530f1efdada90a28cb35e"
+    "bytes": 768,
+    "sha256": "365c19e357ff2d69d3463066a5010bbc5931bd5258a98a63a7912d9cd34fdd06"
   },
   {
     "path": ".gitignore",
@@ -26,18 +26,18 @@
   },
   {
     "path": "CHANGELOG.md",
-    "bytes": 1250,
-    "sha256": "8029cdb9e635af2c00a6ffff82fa5489be2ad8c7da84da95f834551513ee505f"
+    "bytes": 2080,
+    "sha256": "baa744b350419a25656dbe1dfea74206ff569f2bfc04601740395ecdf6f534fb"
   },
   {
     "path": "CONTRIBUTING.md",
-    "bytes": 3266,
-    "sha256": "4762d6867f3ef57b85fce7211c594143c5fdf39c58d2d0e1828e333d8e402b0b"
+    "bytes": 3772,
+    "sha256": "af7d1a4fc22e4a846ece26dc139393686acadf2fe1387df2d6f0e612ea366ea6"
   },
   {
     "path": "custom_components/panasonic_home_readonly/__init__.py",
-    "bytes": 6520,
-    "sha256": "3c4f1a3c6299a952d114265cda67c90994ce0462e0372f4744bbe6a741ae503c"
+    "bytes": 6540,
+    "sha256": "532e78ac04b6d67338f78624f4a92918a83150faef713565f9288a8a2373bd0e"
   },
   {
     "path": "custom_components/panasonic_home_readonly/binary_sensor.py",
@@ -51,13 +51,13 @@
   },
   {
     "path": "custom_components/panasonic_home_readonly/client.py",
-    "bytes": 13433,
-    "sha256": "d739748c9988c0bd97eb6c27fb26a31d7f017a4a7c0abf53dd82a9654de4c8e9"
+    "bytes": 13492,
+    "sha256": "69f2a8c7cf408b58a049ea0462a348f91db3f37728d4dccbb8d889f376c2c3c5"
   },
   {
     "path": "custom_components/panasonic_home_readonly/climate.py",
-    "bytes": 3644,
-    "sha256": "39ae77d8d4dfc5dc64efa8c8856478198cdb8da769ec7318e14761c7fad2fc18"
+    "bytes": 3691,
+    "sha256": "9f27a87008c5cc49f92366f815464c86c7e73169838704acd914b078eb8accfe"
   },
   {
     "path": "custom_components/panasonic_home_readonly/config_flow.py",
@@ -81,8 +81,8 @@
   },
   {
     "path": "custom_components/panasonic_home_readonly/manifest.json",
-    "bytes": 375,
-    "sha256": "8d4edc827fa76b1a950b2dc9215818fc19e1d93b54b1fa645ee9359da0f63e96"
+    "bytes": 367,
+    "sha256": "bb0dba0d3ca670ed933ebf14e16a4c5d678f3bcb637295d45d7c44cf675ec35b"
   },
   {
     "path": "custom_components/panasonic_home_readonly/number.py",
@@ -106,8 +106,8 @@
   },
   {
     "path": "custom_components/panasonic_home_readonly/select.py",
-    "bytes": 5040,
-    "sha256": "989b2cecd33f8864eb2628216e16287dd3959c87369b3f4641cc76fc5a610df1"
+    "bytes": 5107,
+    "sha256": "299b20deb494885a7a6de633f3644ac4e34b23d2dacb520c6e3cacbf0c2e1077"
   },
   {
     "path": "custom_components/panasonic_home_readonly/sensor.py",
@@ -116,28 +116,28 @@
   },
   {
     "path": "custom_components/panasonic_home_readonly/strings.json",
-    "bytes": 1369,
-    "sha256": "a57bc90c979f42e9ebb29af9ada3c299e70b88ac54caeb28c469b71c332d210e"
+    "bytes": 1416,
+    "sha256": "cd8a2f41968a6b744e4877c4f4f377f67c3d5e305d1b369334c63372af15911e"
   },
   {
     "path": "custom_components/panasonic_home_readonly/switch.py",
-    "bytes": 10571,
-    "sha256": "73c827391b29cfaffa7f9599a336d467f90761648dd72368c614f03da4c7db63"
+    "bytes": 10775,
+    "sha256": "c8db9f46dc00e3fde4ee8582a7278f11b4992e90345fd73a42fadf6a9eda2f3d"
   },
   {
     "path": "custom_components/panasonic_home_readonly/translations/en.json",
-    "bytes": 1369,
-    "sha256": "a57bc90c979f42e9ebb29af9ada3c299e70b88ac54caeb28c469b71c332d210e"
+    "bytes": 1603,
+    "sha256": "c5fe58ade23ed335069ce01443e24021713ca59252bf77283f73b28795275612"
   },
   {
     "path": "custom_components/panasonic_home_readonly/translations/zh-Hans.json",
-    "bytes": 1369,
-    "sha256": "a57bc90c979f42e9ebb29af9ada3c299e70b88ac54caeb28c469b71c332d210e"
+    "bytes": 1416,
+    "sha256": "cd8a2f41968a6b744e4877c4f4f377f67c3d5e305d1b369334c63372af15911e"
   },
   {
     "path": "custom_components/panasonic_home_readonly/transport.py",
-    "bytes": 9217,
-    "sha256": "d45458bb93dda086bc3b1d5edb77e253460bf31cb748df3fe3a0e5385121cf7f"
+    "bytes": 9677,
+    "sha256": "a47a8f12b0cc98a3898836f6b583d01a3449a7f0b1440ac672a0d3ecd5c21c90"
   },
   {
     "path": "docs/ARCHITECTURE.md",
@@ -150,29 +150,39 @@
     "sha256": "9fa83cb5990b77399ac891a3a08f367ac712e193d17a5153f2c9a0918dde928b"
   },
   {
+    "path": "docs/COMPARISON.md",
+    "bytes": 5052,
+    "sha256": "df94eb55e1f0e9bdd3f29b184ab22e514af69758f8eaf86d4d8b78643cb25f30"
+  },
+  {
+    "path": "docs/control-payload-baseline.json",
+    "bytes": 2466,
+    "sha256": "5767b8e9f147f01d00a5d94ab82d82d13c6b1dd83fb624bd519736d23da35037"
+  },
+  {
     "path": "docs/DEBUGGING_CASES.md",
     "bytes": 5955,
     "sha256": "904f4521ecb1d6ec106119b038353908e84e8ff829e12d3c4d33f4f79e42a745"
   },
   {
     "path": "docs/DEVICES.md",
-    "bytes": 4082,
-    "sha256": "d2fe447ed948137ed1b5432234572b896146e58520cabdccf84e350f26f56435"
+    "bytes": 4750,
+    "sha256": "825554fcada60c7954fa515fff6b4be94bdd24556f8405cf9fd550bbc318290a"
   },
   {
     "path": "docs/LIMITATIONS.md",
-    "bytes": 2757,
-    "sha256": "ec054cca5f752589e617598e5bfed40e54d1d755eda6bdf616d208eee8186e5e"
+    "bytes": 3180,
+    "sha256": "e346fd7902547bc3a47d755fd7d3b29f24fa3e008f3b9a90aaf822d096eea90e"
   },
   {
     "path": "docs/PROJECT_OVERVIEW.md",
-    "bytes": 4364,
-    "sha256": "f105b072f12d4cfd8ba9dcf2c29a12805dcc797c622401130dc66ec78d69d3de"
+    "bytes": 5107,
+    "sha256": "7923bb00d0dc97e8fd6922fd9e19590f44aba63104e455e1a8ad709d8c3a3107"
   },
   {
     "path": "docs/PROVENANCE.md",
-    "bytes": 4589,
-    "sha256": "cf531bab8f0d4ec2ca018f9d7e2affd03c304d3de947ba2fb26b65310c5ed777"
+    "bytes": 4964,
+    "sha256": "0cde8b59c7615825261b44993a5b0d17b13b617236780658d6a0cf15026799d6"
   },
   {
     "path": "docs/RELEASE_REVIEW.md",
@@ -180,14 +190,29 @@
     "sha256": "f8b6fa924ef2c31740c3a6de9655ea954d9acb75ce25366096f55e30a5504c17"
   },
   {
+    "path": "docs/ROADMAP.md",
+    "bytes": 2748,
+    "sha256": "c0a6ebc92ec4f9dc886ad35aba666e9acfea2f1444e9c3d277a538d1e5dc6668"
+  },
+  {
     "path": "docs/SHARING_CHANGES.md",
     "bytes": 3145,
     "sha256": "4ed120e11969d813ac7f7bea367ab6368ed15348925b66bf762a4d06a1f9c8d1"
   },
   {
+    "path": "docs/source-changes.json",
+    "bytes": 3383,
+    "sha256": "fb6764f4307283ac1fe42d5bda43890a79065f3421f03d29325def1e48997c9a"
+  },
+  {
     "path": "docs/VALIDATION.md",
-    "bytes": 2306,
-    "sha256": "89b95062994d5b6485795d96fc2fecbf5c75336378b5f5ea2ee4af3488d8b260"
+    "bytes": 3412,
+    "sha256": "be0fe573ef738f10cdfafcf4c628b801dcd45bd120f784229194aefa69d40009"
+  },
+  {
+    "path": "docs/VERIFICATION_STATUS.json",
+    "bytes": 1231,
+    "sha256": "44a9b3316f0ebb591c9c0ed6c8ea3df8d87faafb75b1b3b94372171520a50e23"
   },
   {
     "path": "hacs.json",
@@ -211,23 +236,28 @@
   },
   {
     "path": "README.en.md",
-    "bytes": 10407,
-    "sha256": "59bba782eb221efb3b3818dfd6b0182ae9e596c7b23c043661478127297c1d04"
+    "bytes": 11844,
+    "sha256": "f80aead005f8c5d643c0af3990c40e30e23fcc752304b92e86757cd98d3f4914"
   },
   {
     "path": "README.md",
-    "bytes": 7947,
-    "sha256": "24d6f5a29134aff837b093c55d4f5830145adbfc81f5ad8851bcc30a9d078f69"
+    "bytes": 9236,
+    "sha256": "4f87e4bf89672b69316fa74633d61da1bac683256fe8696f89b546d80911433d"
   },
   {
     "path": "SECURITY.md",
-    "bytes": 2434,
-    "sha256": "446a7033dfbb1bb7b590f480ce811803856d370620a8a32f2522a978e09a9f03"
+    "bytes": 2775,
+    "sha256": "be6244414dea6c8012b44aadc1e586f195d2f34f1f9e9aee0278190b2020b17b"
   },
   {
     "path": "test_readonly.py",
     "bytes": 22865,
     "sha256": "2bc4f32367b93d36ceef16e8bce066a52bf9fd037335523d655f3a32c69874fc"
+  },
+  {
+    "path": "tests/ha_runtime_checks.py",
+    "bytes": 8716,
+    "sha256": "9f3f8dd78e6a2b73b57bac349133e25b320a04815cf97fe26e367309083f11bf"
   },
   {
     "path": "tests/test_fridge_protocol.py",
@@ -240,9 +270,14 @@
     "sha256": "140737e420bbdf47fde5949fb3f6b6d199a23a582bb872973db4a6ffa40b1dae"
   },
   {
+    "path": "tests/test_transport_certificate.py",
+    "bytes": 2355,
+    "sha256": "a059588a9230373459121928a315cf0148ad87d3052a6bbed1b51ae8b594920c"
+  },
+  {
     "path": "THIRD_PARTY_NOTICES.md",
-    "bytes": 4560,
-    "sha256": "0abb472c0a094cafd63e1c2cd0e3032b8191bcd4b93d49b4d3db355b1aef1d81"
+    "bytes": 5034,
+    "sha256": "0d503d956ccfd114d8148b185044d905dc249dd4a849df16e6d010babaa1ed52"
   },
   {
     "path": "tools/privacy_scan.py",
@@ -251,7 +286,7 @@
   },
   {
     "path": "tools/review_check.py",
-    "bytes": 3086,
-    "sha256": "b1ca310fb0ec5ee2451247e7ac5914ea03fbe10d1026383d51c1f976026d7749"
+    "bytes": 4641,
+    "sha256": "b816a309a25e4ce612d3be3d9932cce0d1f45ce910b9be6e75f5bc24cb21640c"
   }
 ]

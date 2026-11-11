@@ -4,7 +4,7 @@
 
 A community Home Assistant integration for selected Panasonic appliances using the mainland China smart-home cloud. It currently covers a specific air purifier, a new-protocol air-conditioner family, and the Fridge-19 refrigerator family.
 
-**This is an open-source review draft based on deployed version 0.5.0. No GitHub Release has been published and HACS validation is incomplete.** This project is not affiliated with Panasonic and does not support the international Comfort Cloud service.
+**The current development draft is 0.5.1.dev0, based on deployed version 0.5.0. No GitHub Release has been published and HACS validation is incomplete.** This draft is not deployed to the original running environment. The project is not affiliated with Panasonic and does not support the international Comfort Cloud service.
 
 ## Why this project exists
 
@@ -22,10 +22,20 @@ Use, modification, forks, and contributions are welcome under the applicable lic
 
 ## Supported scope
 
+### How this differs from existing projects
+
+This project fills specific model/protocol gaps: the `0810/75C5PJD` purifier, `AirconCommon-2024-01` AC, and `Fridge-19` refrigerator. The checked mcdona1d revision focuses on controller-based central AC and a bathroom heater; rudyll focuses on ventilation and central AC; osk2 targets its Smart App device/status-code scheme. Their declared support does not directly cover the three combinations above. A shared brand, appliance category, or category number does not establish protocol compatibility.
+
+Existing authentication and community work are reused and attributed. This is a hardware-grounded extension, not a rewrite of HA or a claim of zero shared code. See the [pinned-source comparison](docs/COMPARISON.md).
+
+### Current verification
+
+On 2026-11-11, the maintainer confirmed that the purifier is largely checked and its existing functions are controllable, and that the existing AC controls are usable as well. This supersedes older blanket “unverified” labels. It is a maintainer hardware report, not an independent retest or a newly supplied per-action bidirectional log. See the [machine-readable record](docs/VERIFICATION_STATUS.json).
+
 | Appliance | Discovery rule | Implemented features | Verification boundary |
 | --- | --- | --- | --- |
-| F-75C5PJD air purifier | Category `0810`, normalized subtype starts with `75C5PJD`, cloud model exactly `F-75C5PJD` | Power, four modes, gentle/low/medium/high airflow, NanoeX, plasma, selected boolean controls and sensors | Historical reports confirm power in both directions and a disinfection-to-gentle transition. Other writes are not comprehensively verified. |
-| AC family used by CS-JM35K410Q | Category `0900`, normalized subtype starts with `AIRCONCOMMON202401` | Climate entity, cooling/heating/drying, integer 16–30°C targets, six fan settings, directions and selected auxiliary controls | Status retrieval is verified. One lamp direction has physical confirmation; other controls retain candidate mappings or incomplete validation. |
+| F-75C5PJD air purifier | Category `0810`, normalized subtype starts with `75C5PJD`, cloud model exactly `F-75C5PJD` | Power, four modes, gentle/low/medium/high airflow, NanoeX, plasma, selected boolean controls and sensors | Maintainer confirms existing functions are controllable; this does not add other models or unimplemented app features. |
+| AC family used by CS-JM35K410Q | Category `0900`, normalized subtype starts with `AIRCONCOMMON202401` | Climate entity, cooling/heating/drying, integer 16–30°C targets, six fan settings, directions and selected auxiliary controls | Maintainer confirms existing controls are usable. Other models and room-temperature decoding remain separate limits. |
 | Fridge-19 family used by NR-E411BG-NH | Category `0100`, normalized subtype equals `FRIDGE19` | Three temperature zones and six feature switches | Eco Navi has historical app confirmation in both directions. Quick-ice success was reported without separate direction results. Other writes need verification. |
 
 Discovery matches a protocol family; it does not establish that every model in that family is compatible. Upstream ventilation and central-AC support tables are not this project's support table. See [device details](docs/DEVICES.md) for exact fields, constraints, and evidence.
@@ -42,7 +52,7 @@ The deployed reference environment is Home Assistant 2026.10.4. Earlier versions
 
 To change credentials, use the integration entry's Reconfigure option. Existing credentials are replaced only after successful login and supported-device discovery. Preserve the historical `panasonic_home_readonly` domain and entity IDs when upgrading. Do not rename the directory to match the repository name.
 
-The domain contains `readonly` for compatibility, but this version has real control methods. “Locally validated” describes the development process, not local-only communication: the integration uses Panasonic's cloud. Some interface strings, including the existing `en.json`, remain Chinese; this English README does not claim a fully translated HA interface.
+The domain contains `readonly` for compatibility, but this version has real control methods. “Locally validated” describes the development process, not local-only communication: the integration uses Panasonic's cloud. English configuration-flow text is now provided; entity labels and some error messages remain Chinese.
 
 ## Behavior and limits
 
@@ -70,9 +80,11 @@ python tools/privacy_scan.py
 python tools/review_check.py
 ```
 
-The review records 55 passing offline tests. GitHub Actions results must be checked separately. Offline tests do not prove physical behavior or HACS acceptance.
+The original review recorded 55 passing offline tests. This development cycle adds certificate replacement regressions and a separate isolated HA-runtime job. Exact current results are recorded in the PR checks and validation document. Offline tests do not prove physical behavior or HACS acceptance.
 
 - [Bilingual project overview](docs/PROJECT_OVERVIEW.md)
+- [Comparison with existing Panasonic projects](docs/COMPARISON.md)
+- [Maintenance roadmap](docs/ROADMAP.md)
 - [Contribution guide, including English guidance](CONTRIBUTING.md)
 - [Receiving and sharing community changes](docs/SHARING_CHANGES.md)
 - [Architecture](docs/ARCHITECTURE.md)

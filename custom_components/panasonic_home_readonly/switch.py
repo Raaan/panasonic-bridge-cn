@@ -1,4 +1,4 @@
-"""Power only for the physically verified purifier. No automatic commands."""
+"""Explicit purifier, AC and refrigerator switches; no commands during setup."""
 from homeassistant.components.switch import SwitchEntity
 
 from . import DOMAIN
@@ -66,7 +66,7 @@ class PanasonicFridgeFeature(PanasonicEntity, SwitchEntity):
 class PanasonicAcSoftCool(PanasonicEntity, SwitchEntity):
     _attr_name = '柔湿制冷'
     _attr_icon = 'mdi:snowflake'
-    _attr_extra_state_attributes = {'控制验证': '字段及取值为候选，待制冷季手动验收'}
+    _attr_extra_state_attributes = {'控制验证': '当前型号已实现控制获维护者确认；其他型号需单独验证'}
 
     @property
     def available(self):
@@ -86,7 +86,7 @@ class PanasonicAcSoftCool(PanasonicEntity, SwitchEntity):
 
 class PanasonicAcPowerful(PanasonicEntity, SwitchEntity):
     _attr_icon = 'mdi:weather-windy'
-    _attr_extra_state_attributes = {'控制验证': '强智暖状态已对照；写入与强智冷待用户手动验收'}
+    _attr_extra_state_attributes = {'控制验证': '当前型号已实现控制获维护者确认；其他型号需单独验证'}
 
     def __init__(self, coordinator, device, key, mode, label):
         super().__init__(coordinator, device, key)
@@ -113,7 +113,7 @@ class PanasonicAcPowerful(PanasonicEntity, SwitchEntity):
 class PanasonicAcSleep(PanasonicEntity, SwitchEntity):
     _attr_name = '睡眠'
     _attr_icon = 'mdi:weather-night'
-    _attr_extra_state_attributes = {'控制验证': '状态已对照，控制待用户手动验收'}
+    _attr_extra_state_attributes = {'控制验证': '当前型号已实现控制获维护者确认；其他型号需单独验证'}
 
     @property
     def available(self):
@@ -134,7 +134,7 @@ class PanasonicAcSleep(PanasonicEntity, SwitchEntity):
 class PanasonicAcLamp(PanasonicEntity, SwitchEntity):
     _attr_name = '显示灯光'
     _attr_icon = 'mdi:lightbulb-outline'
-    _attr_extra_state_attributes = {'控制验证': '状态已对照，控制待用户手动验收'}
+    _attr_extra_state_attributes = {'控制验证': '当前型号已实现控制获维护者确认；其他型号需单独验证'}
 
     @property
     def available(self):
@@ -154,7 +154,7 @@ class PanasonicAcLamp(PanasonicEntity, SwitchEntity):
 class PanasonicAcNanoe(PanasonicEntity, SwitchEntity):
     _attr_name = 'NanoeX'
     _attr_icon = 'mdi:air-filter'
-    _attr_extra_state_attributes = {'控制验证': '状态已对照，控制待用户手动验收'}
+    _attr_extra_state_attributes = {'控制验证': '当前型号已实现控制获维护者确认；其他型号需单独验证'}
 
     @property
     def available(self):
@@ -175,7 +175,7 @@ class PanasonicAcNanoe(PanasonicEntity, SwitchEntity):
 class PanasonicAuxHeat(PanasonicEntity, SwitchEntity):
     _attr_name = '辅热'
     _attr_icon = 'mdi:radiator'
-    _attr_extra_state_attributes = {'控制验证': '状态已对照，控制待用户手动验收'}
+    _attr_extra_state_attributes = {'控制验证': '当前型号已实现控制获维护者确认；其他型号需单独验证'}
 
     @property
     def available(self):
@@ -211,7 +211,7 @@ class PanasonicPower(PanasonicEntity, SwitchEntity):
 
 class PanasonicBoolean(PanasonicEntity, SwitchEntity):
     _attr_icon = 'mdi:tune'
-    _attr_extra_state_attributes = {'控制验证': '待用户手动实机验证'}
+    _attr_extra_state_attributes = {'控制验证': '当前型号已实现控制获维护者确认；其他型号需单独验证'}
 
     def __init__(self, coordinator, device, key, label):
         super().__init__(coordinator, device, key + '_control')

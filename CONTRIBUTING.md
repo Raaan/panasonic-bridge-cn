@@ -37,6 +37,8 @@ python tools/review_check.py
 
 CI 仅进行离线测试和包检查，不能证明设备控制成功，也不能代替 HACS/hassfest 验证。测试不使用生产账号，不在 CI 保存松下账号 secret。
 
+优化稿另外提供隔离的 HA 运行时任务 `ha-runtime`，安装固定 HA 版本后测试配置、实体创建和生命周期，云端及凭据均为测试替身。新增运行文件必须在 `docs/source-changes.json` 记录相对部署基线的差异；控制载荷变化需要独立说明并更新相关基线，不能直接删除检查。提供设备结果时请使用 `maintainer_report` / `community_report` 等证据类型，不把报告写成自动化测试完成了真实设备操作。
+
 ## English
 
 Forks and pull requests are welcome. Retain applicable copyright, license and
