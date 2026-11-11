@@ -1,0 +1,257 @@
+[
+  {
+    "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+    "bytes": 572,
+    "sha256": "19b34b4816403065aa359f65ac5b1bbfe761854d13ffd902caf17b09a96441f5"
+  },
+  {
+    "path": ".github/ISSUE_TEMPLATE/device_request.md",
+    "bytes": 516,
+    "sha256": "c80864817f9ec577c3f54beb65b641a968a8a99d4a081b011bff31da2461a123"
+  },
+  {
+    "path": ".github/pull_request_template.md",
+    "bytes": 407,
+    "sha256": "de3b92fa72f26dfd8d7b1572432da23cfaa1bd6825952ebe00bde72131cc2fd6"
+  },
+  {
+    "path": ".github/workflows/offline.yml",
+    "bytes": 464,
+    "sha256": "07ded816e9a761a6e3f00889aa83cb4aee34dabf0b8530f1efdada90a28cb35e"
+  },
+  {
+    "path": ".gitignore",
+    "bytes": 295,
+    "sha256": "994701278defd3fc152d977e0b5af5ebe2a0bfb7075729f207dee2d2fe1b536a"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "bytes": 1250,
+    "sha256": "8029cdb9e635af2c00a6ffff82fa5489be2ad8c7da84da95f834551513ee505f"
+  },
+  {
+    "path": "CONTRIBUTING.md",
+    "bytes": 3266,
+    "sha256": "4762d6867f3ef57b85fce7211c594143c5fdf39c58d2d0e1828e333d8e402b0b"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/__init__.py",
+    "bytes": 6520,
+    "sha256": "3c4f1a3c6299a952d114265cda67c90994ce0462e0372f4744bbe6a741ae503c"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/binary_sensor.py",
+    "bytes": 1044,
+    "sha256": "3fe81ecbb2dba13f9e63a2c4da8006fbdd9f7b8429c54cee131eb74588bf747e"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/calibration.py",
+    "bytes": 6357,
+    "sha256": "5bd9a64024c709c6615f5186dc76738a2027748f30e1e5ebc35891eeeeb07a50"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/client.py",
+    "bytes": 13433,
+    "sha256": "d739748c9988c0bd97eb6c27fb26a31d7f017a4a7c0abf53dd82a9654de4c8e9"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/climate.py",
+    "bytes": 3644,
+    "sha256": "39ae77d8d4dfc5dc64efa8c8856478198cdb8da769ec7318e14761c7fad2fc18"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/config_flow.py",
+    "bytes": 2973,
+    "sha256": "51604f45b688ba9ec5f1bdc3bd3778101b7e13fbfbde51478d32d904cfac3d7c"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/entity.py",
+    "bytes": 869,
+    "sha256": "5e5efcc4f943f2315d3954327f9caacd21865d936099a3442c163d36edc22df7"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/fridge_protocol.py",
+    "bytes": 2544,
+    "sha256": "c454cdcee4dfcdcbdca352725cb74134ad8ba8819861c07471e64e1c02a7126e"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/LICENSE",
+    "bytes": 1063,
+    "sha256": "c798c450685c0d693a17fff8b6b6ee58a763bf48e5698b9c8c6036c93460c72a"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/manifest.json",
+    "bytes": 375,
+    "sha256": "8d4edc827fa76b1a950b2dc9215818fc19e1d93b54b1fa645ee9359da0f63e96"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/number.py",
+    "bytes": 1713,
+    "sha256": "49eb0342aab914986fa8be55f64dd504ac3c602416bbc81d61ccc7b193666c1d"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/panasonic-cloud.pem",
+    "bytes": 1316,
+    "sha256": "78133094b03748f51d74b995e1650e7e65bdf4459f708bb941cf34a3f83a9e96"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/protocols.py",
+    "bytes": 4310,
+    "sha256": "f3dac5ec001edecc3c8b8e8d5302a5919b0f90bce8cfc7db091a987fc7952901"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/purifier_protocol.py",
+    "bytes": 1902,
+    "sha256": "5e33df77612e3de176c57cdd13666c7dfb34a003cac0da1106f7dd2000e200e9"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/select.py",
+    "bytes": 5040,
+    "sha256": "989b2cecd33f8864eb2628216e16287dd3959c87369b3f4641cc76fc5a610df1"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/sensor.py",
+    "bytes": 2619,
+    "sha256": "6c58de074d59b75a0df1fb2b78be6143b5ea98c9137684081ffe5f6288445d56"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/strings.json",
+    "bytes": 1369,
+    "sha256": "a57bc90c979f42e9ebb29af9ada3c299e70b88ac54caeb28c469b71c332d210e"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/switch.py",
+    "bytes": 10571,
+    "sha256": "73c827391b29cfaffa7f9599a336d467f90761648dd72368c614f03da4c7db63"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/translations/en.json",
+    "bytes": 1369,
+    "sha256": "a57bc90c979f42e9ebb29af9ada3c299e70b88ac54caeb28c469b71c332d210e"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/translations/zh-Hans.json",
+    "bytes": 1369,
+    "sha256": "a57bc90c979f42e9ebb29af9ada3c299e70b88ac54caeb28c469b71c332d210e"
+  },
+  {
+    "path": "custom_components/panasonic_home_readonly/transport.py",
+    "bytes": 9217,
+    "sha256": "d45458bb93dda086bc3b1d5edb77e253460bf31cb748df3fe3a0e5385121cf7f"
+  },
+  {
+    "path": "docs/ARCHITECTURE.md",
+    "bytes": 2867,
+    "sha256": "4ea8bb6bafde7bd972cbb7f63c8d3d15e6c83986bc229758c83f416b25623a75"
+  },
+  {
+    "path": "docs/baseline-files.json",
+    "bytes": 2592,
+    "sha256": "9fa83cb5990b77399ac891a3a08f367ac712e193d17a5153f2c9a0918dde928b"
+  },
+  {
+    "path": "docs/DEBUGGING_CASES.md",
+    "bytes": 5955,
+    "sha256": "904f4521ecb1d6ec106119b038353908e84e8ff829e12d3c4d33f4f79e42a745"
+  },
+  {
+    "path": "docs/DEVICES.md",
+    "bytes": 4082,
+    "sha256": "d2fe447ed948137ed1b5432234572b896146e58520cabdccf84e350f26f56435"
+  },
+  {
+    "path": "docs/LIMITATIONS.md",
+    "bytes": 2757,
+    "sha256": "ec054cca5f752589e617598e5bfed40e54d1d755eda6bdf616d208eee8186e5e"
+  },
+  {
+    "path": "docs/PROJECT_OVERVIEW.md",
+    "bytes": 4364,
+    "sha256": "f105b072f12d4cfd8ba9dcf2c29a12805dcc797c622401130dc66ec78d69d3de"
+  },
+  {
+    "path": "docs/PROVENANCE.md",
+    "bytes": 4589,
+    "sha256": "cf531bab8f0d4ec2ca018f9d7e2affd03c304d3de947ba2fb26b65310c5ed777"
+  },
+  {
+    "path": "docs/RELEASE_REVIEW.md",
+    "bytes": 1791,
+    "sha256": "f8b6fa924ef2c31740c3a6de9655ea954d9acb75ce25366096f55e30a5504c17"
+  },
+  {
+    "path": "docs/SHARING_CHANGES.md",
+    "bytes": 3145,
+    "sha256": "4ed120e11969d813ac7f7bea367ab6368ed15348925b66bf762a4d06a1f9c8d1"
+  },
+  {
+    "path": "docs/VALIDATION.md",
+    "bytes": 2306,
+    "sha256": "89b95062994d5b6485795d96fc2fecbf5c75336378b5f5ea2ee4af3488d8b260"
+  },
+  {
+    "path": "hacs.json",
+    "bytes": 93,
+    "sha256": "f477ffba3700f5483d226affef7afb797601444ad5a2ef2db9cdb8a196340e87"
+  },
+  {
+    "path": "LICENSE",
+    "bytes": 1064,
+    "sha256": "cd6fde56eb9b4148507e93738b2c832654fc983f90e3321078919cb25b0099e2"
+  },
+  {
+    "path": "LICENSES/Apache-2.0.txt",
+    "bytes": 11371,
+    "sha256": "dc7917eaabfc9390e93f43a9623894f9ed2399d43b7dd0e542a8bbc4a41e5009"
+  },
+  {
+    "path": "NOTICE",
+    "bytes": 864,
+    "sha256": "096d0f522fc4023713cbad546158922c6f5d028e5b562de8ff12ed900e244bde"
+  },
+  {
+    "path": "README.en.md",
+    "bytes": 10407,
+    "sha256": "59bba782eb221efb3b3818dfd6b0182ae9e596c7b23c043661478127297c1d04"
+  },
+  {
+    "path": "README.md",
+    "bytes": 7947,
+    "sha256": "24d6f5a29134aff837b093c55d4f5830145adbfc81f5ad8851bcc30a9d078f69"
+  },
+  {
+    "path": "SECURITY.md",
+    "bytes": 2434,
+    "sha256": "446a7033dfbb1bb7b590f480ce811803856d370620a8a32f2522a978e09a9f03"
+  },
+  {
+    "path": "test_readonly.py",
+    "bytes": 22865,
+    "sha256": "2bc4f32367b93d36ceef16e8bce066a52bf9fd037335523d655f3a32c69874fc"
+  },
+  {
+    "path": "tests/test_fridge_protocol.py",
+    "bytes": 3998,
+    "sha256": "648c7a9a48faa78e8cd1f2ecf52b91181e3958b89bd4ca06cdd10e46c3c0badd"
+  },
+  {
+    "path": "tests/test_privacy_scan.py",
+    "bytes": 2922,
+    "sha256": "140737e420bbdf47fde5949fb3f6b6d199a23a582bb872973db4a6ffa40b1dae"
+  },
+  {
+    "path": "THIRD_PARTY_NOTICES.md",
+    "bytes": 4560,
+    "sha256": "0abb472c0a094cafd63e1c2cd0e3032b8191bcd4b93d49b4d3db355b1aef1d81"
+  },
+  {
+    "path": "tools/privacy_scan.py",
+    "bytes": 3742,
+    "sha256": "f4fbcdf7990afe5e33f123dc44a51479effc0a1ffa000e516876f1e0e7c54a4b"
+  },
+  {
+    "path": "tools/review_check.py",
+    "bytes": 3086,
+    "sha256": "b1ca310fb0ec5ee2451247e7ac5914ea03fbe10d1026383d51c1f976026d7749"
+  }
+]

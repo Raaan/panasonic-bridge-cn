@@ -1,0 +1,13 @@
+{
+  "domain": "panasonic_home_readonly",
+  "name": "松下智家（本地验证）",
+  "version": "0.5.0",
+  "config_flow": true,
+  "documentation": "https://github.com/Raaan/panasonic-bridge-cn",
+  "codeowners": [
+    "@Raaan"
+  ],
+  "requirements": [],
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/Raaan/panasonic-bridge-cn/issues"
+}

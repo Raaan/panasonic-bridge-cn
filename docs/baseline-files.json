@@ -1,0 +1,86 @@
+[
+  {
+    "file": "__init__.py",
+    "sha256": "3c4f1a3c6299a952d114265cda67c90994ce0462e0372f4744bbe6a741ae503c"
+  },
+  {
+    "file": "binary_sensor.py",
+    "sha256": "3fe81ecbb2dba13f9e63a2c4da8006fbdd9f7b8429c54cee131eb74588bf747e"
+  },
+  {
+    "file": "calibration.py",
+    "sha256": "5bd9a64024c709c6615f5186dc76738a2027748f30e1e5ebc35891eeeeb07a50"
+  },
+  {
+    "file": "client.py",
+    "sha256": "d739748c9988c0bd97eb6c27fb26a31d7f017a4a7c0abf53dd82a9654de4c8e9"
+  },
+  {
+    "file": "climate.py",
+    "sha256": "39ae77d8d4dfc5dc64efa8c8856478198cdb8da769ec7318e14761c7fad2fc18"
+  },
+  {
+    "file": "config_flow.py",
+    "sha256": "51604f45b688ba9ec5f1bdc3bd3778101b7e13fbfbde51478d32d904cfac3d7c"
+  },
+  {
+    "file": "entity.py",
+    "sha256": "5e5efcc4f943f2315d3954327f9caacd21865d936099a3442c163d36edc22df7"
+  },
+  {
+    "file": "fridge_protocol.py",
+    "sha256": "c454cdcee4dfcdcbdca352725cb74134ad8ba8819861c07471e64e1c02a7126e"
+  },
+  {
+    "file": "LICENSE",
+    "sha256": "c798c450685c0d693a17fff8b6b6ee58a763bf48e5698b9c8c6036c93460c72a"
+  },
+  {
+    "file": "manifest.json",
+    "sha256": "0ac8f81a9e905281c748d06ed2b19244a27227a77b1e3443fdb57223272ad5ec"
+  },
+  {
+    "file": "number.py",
+    "sha256": "49eb0342aab914986fa8be55f64dd504ac3c602416bbc81d61ccc7b193666c1d"
+  },
+  {
+    "file": "panasonic-cloud.pem",
+    "sha256": "78133094b03748f51d74b995e1650e7e65bdf4459f708bb941cf34a3f83a9e96"
+  },
+  {
+    "file": "protocols.py",
+    "sha256": "f3dac5ec001edecc3c8b8e8d5302a5919b0f90bce8cfc7db091a987fc7952901"
+  },
+  {
+    "file": "purifier_protocol.py",
+    "sha256": "5e33df77612e3de176c57cdd13666c7dfb34a003cac0da1106f7dd2000e200e9"
+  },
+  {
+    "file": "select.py",
+    "sha256": "989b2cecd33f8864eb2628216e16287dd3959c87369b3f4641cc76fc5a610df1"
+  },
+  {
+    "file": "sensor.py",
+    "sha256": "6c58de074d59b75a0df1fb2b78be6143b5ea98c9137684081ffe5f6288445d56"
+  },
+  {
+    "file": "strings.json",
+    "sha256": "a57bc90c979f42e9ebb29af9ada3c299e70b88ac54caeb28c469b71c332d210e"
+  },
+  {
+    "file": "switch.py",
+    "sha256": "73c827391b29cfaffa7f9599a336d467f90761648dd72368c614f03da4c7db63"
+  },
+  {
+    "file": "transport.py",
+    "sha256": "d45458bb93dda086bc3b1d5edb77e253460bf31cb748df3fe3a0e5385121cf7f"
+  },
+  {
+    "file": "translations/en.json",
+    "sha256": "a57bc90c979f42e9ebb29af9ada3c299e70b88ac54caeb28c469b71c332d210e"
+  },
+  {
+    "file": "translations/zh-Hans.json",
+    "sha256": "a57bc90c979f42e9ebb29af9ada3c299e70b88ac54caeb28c469b71c332d210e"
+  }
+]
