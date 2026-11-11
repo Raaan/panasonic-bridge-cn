@@ -74,6 +74,7 @@ The review records 55 passing offline tests. GitHub Actions results must be chec
 
 - [Bilingual project overview](docs/PROJECT_OVERVIEW.md)
 - [Contribution guide, including English guidance](CONTRIBUTING.md)
+- [Receiving and sharing community changes](docs/SHARING_CHANGES.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Sanitized debugging cases](docs/DEBUGGING_CASES.md)
 - [Security and privacy](SECURITY.md)
@@ -82,6 +83,8 @@ The review records 55 passing offline tests. GitHub Actions results must be chec
 Detailed technical notes are currently primarily Chinese. English contributions are welcome.
 
 ## Licensing and attribution
+
+This project uses [Home Assistant](https://www.home-assistant.io/)'s custom-integration mechanism. We thank its community for the platform, entity model, and developer documentation. HA Core uses [Apache-2.0](https://github.com/home-assistant/core/blob/dev/LICENSE.md). This repository does not distribute HA Core, virtual machines, or user configurations. Users install HA separately. Publishing this code does not mean official HA inclusion, maintenance, or endorsement.
 
 The direct upstream, [rudyll/panasonic_smart_china_r](https://github.com/rudyll/panasonic_smart_china_r), uses MIT. Its original copyright and license remain in [LICENSE](LICENSE). The acknowledged earlier upstream, [mcdona1d/panasonic_smart_china](https://github.com/mcdona1d/panasonic_smart_china), uses Apache-2.0; that license is included in [LICENSES/Apache-2.0.txt](LICENSES/Apache-2.0.txt).
 

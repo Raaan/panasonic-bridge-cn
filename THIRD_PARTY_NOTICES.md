@@ -10,6 +10,12 @@
 - 本地交接明确以该项目为来源，登录派生、设备 token 与集成思路经本地工具和适配层复用。实际部署的整合不是该上游默认分支的原样副本。
 - 上游 README 明确将主干范围限定为新风和中央空调，并鼓励其他品类独立仓库发布。本项目净化器和冰箱范围与之相符；上游未为本项目提供维护或背书。
 
+## 运行平台 Home Assistant
+
+- 项目：[home-assistant/core](https://github.com/home-assistant/core)。其 [LICENSE.md](https://github.com/home-assistant/core/blob/dev/LICENSE.md) 为 Apache-2.0。
+- 本整合依赖 HA 的平台 API 和自定义整合加载机制；HA 本体由使用者另行安装，本包不重新分发其源码、虚拟机镜像或用户配置。
+- 感谢 Home Assistant 社区提供运行平台和开发文档。本项目是独立社区整合，不代表 HA 官方收录或背书。后续如复制 HA 源文件而非仅调用其 API，应在来源表中记录该文件及适用通知。
+
 ## 更早上游
 
 - 项目：[mcdona1d/panasonic_smart_china](https://github.com/mcdona1d/panasonic_smart_china)。由直接上游 README 明确署名。

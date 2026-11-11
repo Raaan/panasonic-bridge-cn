@@ -31,8 +31,8 @@
   },
   {
     "path": "CONTRIBUTING.md",
-    "bytes": 3138,
-    "sha256": "ccfd2f543296d138e97ae92095998415e7a30331741777a5ffdadb2ab4e730d3"
+    "bytes": 3266,
+    "sha256": "4762d6867f3ef57b85fce7211c594143c5fdf39c58d2d0e1828e333d8e402b0b"
   },
   {
     "path": "custom_components/panasonic_home_readonly/__init__.py",
@@ -176,8 +176,13 @@
   },
   {
     "path": "docs/RELEASE_REVIEW.md",
-    "bytes": 1746,
-    "sha256": "348815017c49e6186a99375bb9d1a7bbce035c975a1bcc4ba9e7cdf1a8fd9f9b"
+    "bytes": 1791,
+    "sha256": "f8b6fa924ef2c31740c3a6de9655ea954d9acb75ce25366096f55e30a5504c17"
+  },
+  {
+    "path": "docs/SHARING_CHANGES.md",
+    "bytes": 3145,
+    "sha256": "4ed120e11969d813ac7f7bea367ab6368ed15348925b66bf762a4d06a1f9c8d1"
   },
   {
     "path": "docs/VALIDATION.md",
@@ -206,13 +211,13 @@
   },
   {
     "path": "README.en.md",
-    "bytes": 9864,
-    "sha256": "aac2cc935530190156bef135d9a7afc756810c68625fe4621b27fb0719071296"
+    "bytes": 10407,
+    "sha256": "59bba782eb221efb3b3818dfd6b0182ae9e596c7b23c043661478127297c1d04"
   },
   {
     "path": "README.md",
-    "bytes": 7453,
-    "sha256": "5fc8e248de42bb111d7ef9566be1d5516f24d5daecac771afa81b97a97707d47"
+    "bytes": 7947,
+    "sha256": "24d6f5a29134aff837b093c55d4f5830145adbfc81f5ad8851bcc30a9d078f69"
   },
   {
     "path": "SECURITY.md",
@@ -236,8 +241,8 @@
   },
   {
     "path": "THIRD_PARTY_NOTICES.md",
-    "bytes": 3939,
-    "sha256": "af77e5189fb7d5d898b3f395019781449cdd521f2dce9e66412831dbf19d15e2"
+    "bytes": 4560,
+    "sha256": "0abb472c0a094cafd63e1c2cd0e3032b8191bcd4b93d49b4d3db355b1aef1d81"
   },
   {
     "path": "tools/privacy_scan.py",

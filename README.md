@@ -63,6 +63,7 @@
 - [中英项目介绍](docs/PROJECT_OVERVIEW.md)
 - [许可证与来源](THIRD_PARTY_NOTICES.md)
 - [贡献指南](CONTRIBUTING.md)：欢迎修改、适配、问题报告和 Pull Request。
+- [接收与分享社区修改](docs/SHARING_CHANGES.md)
 
 离线验证，无账号、无网络：
 
@@ -74,6 +75,8 @@ python tools/review_check.py
 ```
 
 ## 许可与署名
+
+本项目使用 [Home Assistant](https://www.home-assistant.io/) 的自定义整合机制，感谢 Home Assistant 社区提供的平台、实体模型和开发文档。HA Core 按 [Apache-2.0](https://github.com/home-assistant/core/blob/dev/LICENSE.md) 发布；本仓库不分发 HA 本体、虚拟机或用户配置。使用者自行安装 HA，再安装本整合。源码公开不代表已获 HA 官方收录、维护或认可。
 
 直接上游 [rudyll/panasonic_smart_china_r](https://github.com/rudyll/panasonic_smart_china_r) 使用 MIT，原始版权与许可全文保留于 [LICENSE](LICENSE)。其更早上游 [mcdona1d/panasonic_smart_china](https://github.com/mcdona1d/panasonic_smart_china) 使用 Apache-2.0，全文另存于 [LICENSES/Apache-2.0.txt](LICENSES/Apache-2.0.txt)。保留两条来源链及适用的署名、修改说明；不要把全部历史贡献改署为本项目作者。
 
