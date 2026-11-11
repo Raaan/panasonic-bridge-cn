@@ -91,12 +91,18 @@ class RuntimeTests(unittest.IsolatedAsyncioTestCase):
         entry = self.entry()
         hass.data[integration.DOMAIN] = {entry.entry_id: coordinator}
         entities = []
-        for module in platforms.values():
-            await module.async_setup_entry(hass, entry, entities.extend)
+        scoped_ids = []
+        for platform, module in platforms.items():
+            created = []
+            await module.async_setup_entry(hass, entry, created.extend)
+            entities.extend(created)
+            scoped_ids.extend((platform, entity.unique_id) for entity in created)
         self.assertGreater(len(entities), 20)
         for command in commands.values():
             command.assert_not_awaited()
-        self.assertEqual(len({e.unique_id for e in entities}), len(entities))
+        # HA scopes unique_id by platform. Sensor and binary_sensor may share
+        # an identifier without collision; keep existing registry IDs stable.
+        self.assertEqual(len(set(scoped_ids)), len(entities))
 
     def make_flow(self, entry, entries):
         flow = flow_module.PanasonicFlow()

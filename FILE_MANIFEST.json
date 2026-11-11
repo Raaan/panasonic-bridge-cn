@@ -17,7 +17,7 @@
   {
     "path": ".github/workflows/offline.yml",
     "bytes": 768,
-    "sha256": "4dd32adda182d416940416b62bb367938a3a560c3f629b5347d57d9dfe7f9020"
+    "sha256": "365c19e357ff2d69d3463066a5010bbc5931bd5258a98a63a7912d9cd34fdd06"
   },
   {
     "path": ".gitignore",
@@ -256,8 +256,8 @@
   },
   {
     "path": "tests/ha_runtime_checks.py",
-    "bytes": 8400,
-    "sha256": "1189bc178a1893b8420dce178b4d5119ed355d58d00773ef99d6252ebec98f62"
+    "bytes": 8716,
+    "sha256": "9f3f8dd78e6a2b73b57bac349133e25b320a04815cf97fe26e367309083f11bf"
   },
   {
     "path": "tests/test_fridge_protocol.py",
