@@ -1,4 +1,4 @@
-"""Manual-test climate entity for the observed new-protocol AC values."""
+"""Climate entity for the maintainer-confirmed new-protocol AC model."""
 from homeassistant.components.climate import ClimateEntity, ClimateEntityFeature, HVACMode
 from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
 from homeassistant.exceptions import HomeAssistantError
@@ -26,7 +26,7 @@ class PanasonicClimate(PanasonicEntity, ClimateEntity):
                                 | ClimateEntityFeature.FAN_MODE
                                 | ClimateEntityFeature.TURN_ON
                                 | ClimateEntityFeature.TURN_OFF)
-    _attr_extra_state_attributes = {'控制验证': '待用户手动实机验证'}
+    _attr_extra_state_attributes = {'控制验证': '当前型号已实现控制获维护者确认；其他型号需单独验证'}
 
     @property
     def status(self):

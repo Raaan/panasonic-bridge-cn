@@ -43,13 +43,33 @@ for path in sorted(ROOT.rglob('*')):
             errors.append(f'{label}: {relative}')
 
 manifest = json.loads((COMPONENT / 'manifest.json').read_text(encoding='utf-8'))
-if manifest['domain'] != 'panasonic_home_readonly' or manifest['version'] != '0.5.0':
+if manifest['domain'] != 'panasonic_home_readonly' or manifest['version'] != '0.5.1.dev0':
     errors.append('Unexpected domain/version migration in review package')
 baseline = json.loads((ROOT / 'docs' / 'baseline-files.json').read_text(encoding='utf-8'))
+change_record = json.loads((ROOT / 'docs' / 'source-changes.json').read_text(encoding='utf-8'))
+changes = {item['file']: item for item in change_record['changes']}
 for item in baseline:
     path = COMPONENT / item['file']
-    if item['file'] != 'manifest.json' and hashlib.sha256(path.read_bytes()).hexdigest() != item['sha256']:
-        errors.append(f'Runtime source differs from server: {item["file"]}')
+    digest = hashlib.sha256(path.read_bytes()).hexdigest()
+    if digest != item['sha256']:
+        change = changes.get(item['file'])
+        if (change is None or change['baseline_sha256'] != item['sha256']
+                or change['sha256'] != digest or not change.get('reason')):
+            errors.append(f'Unrecorded change from runtime baseline: {item["file"]}')
+for item in json.loads((ROOT / 'docs' / 'control-payload-baseline.json').read_text(encoding='utf-8')):
+    content = (COMPONENT / item['file']).read_text(encoding='utf-8')
+    functions = [node for node in ast.walk(ast.parse(content))
+                 if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) and node.name == item['function']]
+    if len(functions) != 1 or hashlib.sha256(ast.get_source_segment(content, functions[0]).encode()).hexdigest() != item['sha256']:
+        errors.append(f'Control/request method changed: {item["file"]}:{item["function"]}')
+english = json.loads((COMPONENT / 'translations/en.json').read_text(encoding='utf-8'))
+chinese = json.loads((COMPONENT / 'translations/zh-Hans.json').read_text(encoding='utf-8'))
+def schema_paths(value, prefix=''):
+    if isinstance(value, dict):
+        return {path for key, item in value.items() for path in schema_paths(item, prefix + '/' + key)}
+    return {prefix}
+if schema_paths(english) != schema_paths(chinese) or '{detail}' not in english['config']['error']['cannot_connect']:
+    errors.append('Configuration translations do not preserve schema/placeholders')
 certificate = COMPONENT / 'panasonic-cloud.pem'
 der = ssl.PEM_cert_to_DER_cert(certificate.read_text(encoding='ascii'))
 fingerprint = hashlib.sha256(der).hexdigest()
@@ -57,5 +77,5 @@ if fingerprint != 'a03226da8dd2ef0ea7e390232eed88d27d36c9e1a3208439f20a4c37eec35
     errors.append('Unexpected certificate fingerprint')
 if errors:
     raise SystemExit('\n'.join(errors))
-print(f'PASS: {len(baseline)} baseline files; Python/JSON syntax; bounded sensitive-pattern scan; certificate fingerprint.')
+print(f'PASS: {len(baseline)} baseline files with {len(changes)} recorded changes; unchanged control/request methods; translations; syntax; privacy scan; certificate fingerprint.')
 print('Manual provenance, privacy, HA runtime and physical device review remain separate.')

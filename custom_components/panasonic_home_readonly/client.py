@@ -1,7 +1,8 @@
-"""Read-only HA wrapper around the locally validated Panasonic transport.
+"""HA client for the locally validated Panasonic transport.
 
 Protocol derived from tools/home_control/panasonic.py and
-tools/probe_set_endpoints.py in the handoff project. No SET endpoint is allowed.
+tools/probe_set_endpoints.py in the handoff project. Explicit controls use
+separate target-checked methods; discovery and status polling do not send SET.
 """
 from __future__ import annotations
 

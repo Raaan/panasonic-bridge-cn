@@ -1,0 +1,31 @@
+{
+  "updated": "2026-11-11",
+  "evidence_type": "maintainer_report",
+  "independent_retest": false,
+  "devices": [
+    {
+      "model": "F-75C5PJD",
+      "category": "0810",
+      "protocol": "75C5PJD",
+      "status": "maintainer_confirmed",
+      "scope": "Existing implemented controls; maintainer reports most functions checked and controllable.",
+      "limits": ["No new-model claim", "No per-action bidirectional log supplied with this update", "No filter-reset support"]
+    },
+    {
+      "model": "CS-JM35K410Q",
+      "category": "0900",
+      "protocol": "AirconCommon-2024-01",
+      "status": "maintainer_confirmed",
+      "scope": "Existing implemented controls; maintainer confirms AC controls are also usable.",
+      "limits": ["No new-model claim", "No per-action bidirectional log supplied with this update", "Room-temperature encoding remains unresolved"]
+    },
+    {
+      "model": "NR-E411BG-NH",
+      "category": "0100",
+      "protocol": "Fridge-19",
+      "status": "partially_confirmed",
+      "scope": "Historical Eco Navi app confirmation in both directions; quick-ice success without direction details.",
+      "limits": ["Other functions and temperature writes still need validation"]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "file": "client.py",
+    "function": "set_fridge_controls",
+    "sha256": "9714ea011bf71ced0ffdd1f3a1fcbd0acb82271cd13955886fda9cfa2f345102"
+  },
+  {
+    "file": "client.py",
+    "function": "set_power",
+    "sha256": "df37c4488af696384e47e1592fa8b4b914f30ff253a699d1991dc647f55eee9e"
+  },
+  {
+    "file": "client.py",
+    "function": "set_ac_controls",
+    "sha256": "942b6b7e261f35113cd7bedd644d132a409d2bbbdb2426e024455b1a7f823285"
+  },
+  {
+    "file": "client.py",
+    "function": "set_purifier_controls",
+    "sha256": "e22fc088f9dfd3e6c9c23f86d267b199cc837112b38d8ecd8fb93b96a5e27d75"
+  },
+  {
+    "file": "transport.py",
+    "function": "set_fridge_controls",
+    "sha256": "42c80a51f9fc1e37c3312bee3c20651a61b8b641689f208ad8e444f564185afb"
+  },
+  {
+    "file": "transport.py",
+    "function": "get_fridge_status",
+    "sha256": "b93224246e1c28cd1948740726afd33922bfecf1f7bff4ed1ce27e2a419d5581"
+  },
+  {
+    "file": "transport.py",
+    "function": "post",
+    "sha256": "f57d72c960998b6dae924cec3e85161a285fc081b198098e8fbdcf6c4313e5a4"
+  },
+  {
+    "file": "transport.py",
+    "function": "set_purifier_power",
+    "sha256": "85866d2fb65e5b25869d23193f0cdffdf61431df5a08a173c54212fb9a782930"
+  },
+  {
+    "file": "transport.py",
+    "function": "set_purifier_extended",
+    "sha256": "398527f5b019475bb578e7b7406be14d083e74c3dc6d6c8510d4f5c9a04b9cd0"
+  },
+  {
+    "file": "transport.py",
+    "function": "set_purifier_controls",
+    "sha256": "f5882d5513d57bdb584eb77db20ddafb90cdc70692d6334679a5ad12b0af7775"
+  },
+  {
+    "file": "transport.py",
+    "function": "_request",
+    "sha256": "f2b0b5eb0dee88a602a9957dc1b230437a3f8ec896000548ff956b42a464dd48"
+  },
+  {
+    "file": "transport.py",
+    "function": "set_ac_controls",
+    "sha256": "446acb7f45f02d5ce54843871e5c7593871b2b68f9b8690c810f401a93eb087d"
+  },
+  {
+    "file": "protocols.py",
+    "function": "build_ac_params",
+    "sha256": "5bf3cd1fc767b6c15ae9e870a8c0c88ab8f729907af8ae38c0ed34a9f5ede5e8"
+  },
+  {
+    "file": "purifier_protocol.py",
+    "function": "full_status",
+    "sha256": "e658fdebd905e6c87397368a756173ceafda56a6e2b110b891c25b53c9c1032b"
+  },
+  {
+    "file": "purifier_protocol.py",
+    "function": "build_changes",
+    "sha256": "c1579f7ebc18c98c6f9e43927bcc138816aaa67aef86d2052117da4fc9012635"
+  },
+  {
+    "file": "fridge_protocol.py",
+    "function": "build_fridge_params",
+    "sha256": "9a64a5717fc6a34a2b50b55448d002912b4f4c9f9f7e341c701c12107ec702ee"
+  }
+]

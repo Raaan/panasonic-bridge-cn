@@ -1,6 +1,7 @@
 """Transport reused from the local handoff tools; TLS validated, no redirects.
-Only authentication, discovery and validated read endpoints are permitted.
-The original SET allowance has been removed. No automatic network calls at import.
+The generic post method permits authentication, discovery and bounded reads.
+Separate methods handle validated control payloads without automatic retries.
+There are no automatic network calls at import.
 """
 import hashlib
 import json
@@ -19,6 +20,7 @@ PURIFIER_SET = 'ADevSetStatusNeedsAP'
 AC_SET = 'ACDevSetStatusNewProtocol'
 POWER_SKIP = ('airVo', 'nanoe', 'led', 'dust', 'gas', 'sensiTVOC',
               'childLock', 'lcdSwitch', 'fliterRemind')
+EXPECTED_CERTIFICATE_SHA256 = 'a03226da8dd2ef0ea7e390232eed88d27d36c9e1a3208439f20a4c37eec35948'
 
 class CloudError(RuntimeError):
     """Safe diagnostic containing no raw server response."""
@@ -72,14 +74,19 @@ class Transport:
             raise CloudError('冰箱只读查询失败；未自动重试') from None
 
     def __init__(self, certificate):
+        try:
+            fingerprint = hashlib.sha256(ssl.PEM_cert_to_DER_cert(
+                Path(certificate).read_text(encoding='ascii'))).hexdigest()
+        except (OSError, ValueError, UnicodeError):
+            raise CloudError('证书无法读取或解析；未建立连接', reason='certificate') from None
+        if fingerprint != EXPECTED_CERTIFICATE_SHA256:
+            raise CloudError('证书指纹与已审阅版本不一致；未建立连接', reason='certificate')
         context = ssl.create_default_context(cafile=str(certificate))
         # Python >=3.13 enables X509_STRICT. The exact legacy certificate the
         # user already trusts lacks modern CA constraints. Scope compatibility
         # to that certificate and this connection; retain CERT_REQUIRED and
         # hostname verification, expiry checks, modern TLS defaults and no redirects.
-        fingerprint = hashlib.sha256(ssl.PEM_cert_to_DER_cert(
-            Path(certificate).read_text(encoding='ascii'))).hexdigest()
-        if fingerprint == 'a03226da8dd2ef0ea7e390232eed88d27d36c9e1a3208439f20a4c37eec35948':
+        if fingerprint == EXPECTED_CERTIFICATE_SHA256:
             context.verify_flags &= ~ssl.VERIFY_X509_STRICT
         self.opener = urllib.request.build_opener(
             urllib.request.ProxyHandler({}), NoRedirect(), urllib.request.HTTPSHandler(context=context))

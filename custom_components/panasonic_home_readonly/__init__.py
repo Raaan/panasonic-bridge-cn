@@ -1,4 +1,4 @@
-"""Locally validated, read-only Panasonic entities."""
+"""Panasonic cloud polling and explicit control with bounded read-back checks."""
 from datetime import timedelta
 import asyncio
 import logging
@@ -17,7 +17,7 @@ _LOGGER = logging.getLogger(__name__)
 
 class PanasonicCoordinator(DataUpdateCoordinator):
     def __init__(self, hass, entry, client):
-        super().__init__(hass, _LOGGER, name='Panasonic read-only status',
+        super().__init__(hass, _LOGGER, name='Panasonic status',
                          config_entry=entry, update_interval=timedelta(seconds=60))
         self.client = client
         self._command_lock = asyncio.Lock()
@@ -53,7 +53,7 @@ class PanasonicCoordinator(DataUpdateCoordinator):
             except CloudError as error:
                 raise HomeAssistantError(f'空调请求未确认（{error.safe_detail}），未重试或切换端点') from None
             except ValueError:
-                raise HomeAssistantError('当前状态不匹配候选空调协议或参数越界，未发送命令') from None
+                raise HomeAssistantError('当前状态不匹配已实现的空调协议或参数越界，未发送命令') from None
             except Exception:
                 raise HomeAssistantError('空调请求未确认，未重试或切换端点；请核对实体结果及协议') from None
             await asyncio.sleep(3)
@@ -75,7 +75,7 @@ class PanasonicCoordinator(DataUpdateCoordinator):
             try:
                 await self.hass.async_add_executor_job(self.client.set_purifier_controls, device, changes)
             except Exception:
-                raise HomeAssistantError('净化器功能请求未确认，未自动重试；此功能待实机验证') from None
+                raise HomeAssistantError('净化器功能请求未确认，未自动重试；请核对设备状态') from None
             await asyncio.sleep(3)
             await self.async_request_refresh()
             observed = (self.data or {}).get(device.uid, {}).get('status', {})
