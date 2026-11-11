@@ -1,17 +1,13 @@
-Panasonic Bridge CN — review preparation, 2026-11-11.
+Panasonic Bridge CN
 
-Derived through local Home Assistant adaptation from:
+Built on local Home Assistant adaptation and community work from:
 rudyll/panasonic_smart_china_r — Copyright (c) 2026 rudyll, MIT License.
-Earlier upstream acknowledged by that project:
-mcdona1d/panasonic_smart_china — Apache License, Version 2.0.
+Earlier upstream: mcdona1d/panasonic_smart_china — Apache License, Version 2.0.
 
-Preserve applicable original copyright and attribution notices.
-See LICENSE, LICENSES/Apache-2.0.txt and THIRD_PARTY_NOTICES.md.
-This file is a new provenance notice; it is not an upstream NOTICE copy.
+The applicable license texts, attribution and known changes are retained in
+LICENSE, LICENSES/Apache-2.0.txt and THIRD_PARTY_NOTICES.md.
+This notice was prepared for this project; it is not a copied upstream NOTICE.
 
-Review changes: public repository metadata, documentation, contribution
-guidance, packaging checks, and offline regression tests. The Home Assistant
-domain and runtime Python behavior are preserved from deployed version 0.5.0.
-
-Panasonic and product names belong to their respective owners.
-This community project is not affiliated with or endorsed by Panasonic.
+Home Assistant provides the integration framework and is installed separately.
+Panasonic and other product names belong to their respective owners.
+This is an independent community project.

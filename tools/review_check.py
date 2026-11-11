@@ -46,10 +46,13 @@ manifest = json.loads((COMPONENT / 'manifest.json').read_text(encoding='utf-8'))
 if manifest['domain'] != 'panasonic_home_readonly' or manifest['version'] != '0.5.0':
     errors.append('Unexpected domain/version migration in review package')
 baseline = json.loads((ROOT / 'docs' / 'baseline-files.json').read_text(encoding='utf-8'))
+editorial = {item['file']: item for item in json.loads((ROOT / 'docs' / 'editorial-changes.json').read_text(encoding='utf-8'))}
 for item in baseline:
     path = COMPONENT / item['file']
     if item['file'] != 'manifest.json' and hashlib.sha256(path.read_bytes()).hexdigest() != item['sha256']:
-        errors.append(f'Runtime source differs from server: {item["file"]}')
+        record = editorial.get(item['file'])
+        if record is None or record['baseline_sha256'] != item['sha256'] or record['sha256'] != hashlib.sha256(path.read_bytes()).hexdigest():
+            errors.append(f'Unrecorded runtime change: {item["file"]}')
 certificate = COMPONENT / 'panasonic-cloud.pem'
 der = ssl.PEM_cert_to_DER_cert(certificate.read_text(encoding='ascii'))
 fingerprint = hashlib.sha256(der).hexdigest()

@@ -2,66 +2,65 @@
 
 [中文](README.md) | [English](README.en.md)
 
-A community Home Assistant integration for selected Panasonic appliances using the mainland China smart-home cloud. It currently covers a specific air purifier, a new-protocol air-conditioner family, and the Fridge-19 refrigerator family.
+A Home Assistant integration for the mainland China Panasonic appliances I use at home: an air purifier, an air conditioner and a refrigerator.
 
-**This is an open-source review draft based on deployed version 0.5.0. No GitHub Release has been published and HACS validation is incomplete.** This project is not affiliated with Panasonic and does not support the international Comfort Cloud service.
+The deployed version is 0.5.0. A formal GitHub Release has not been published, and HACS release checks are still being completed.
 
-## Why this project exists
+## Why I started this
 
-The project grew out of building a real Home Assistant home environment. The aim was to bring appliances from different brands—air conditioners, an air purifier, a refrigerator, and laundry appliances—into one platform for status monitoring and control, with a foundation for future cross-brand automation.
+When setting up Home Assistant at home, I wanted to manage appliances from different brands in one place. My Midea devices had usable integrations, but the existing projects I found did not directly cover my mainland China Panasonic models.
 
-During that setup, brands such as Midea had usable built-in or established community integration paths. Panasonic was expected to fit into the same environment, but the mainland China models being used were not directly covered by the existing approaches tried at the time. Some appliance categories lacked an adapter; others used protocols that differed from already-supported controllers. This left a practical gap in the unified home setup. This describes the experience with those regions, models, and features; support for other Panasonic regions, product lines, and projects must be assessed separately.
+Those projects had already done useful work on authentication and device communication. I built on that work to add the state reading and controls my devices needed. The purifier, AC and refrigerator now run reliably in my home, and I have checked their implemented controls on the actual devices.
 
-Work therefore began on filling that gap, building on existing community projects and public protocol knowledge. The process started with login and discovery, then checked real state fields, control values, request formats, and read-back behavior. Purifier, AC, and refrigerator adapters gradually became part of the Home Assistant environment. The resulting knowledge includes successes and failure cases: incorrect category assumptions, unsuitable request envelopes, incomplete cached state, reversed lamp semantics, and ambiguous confirmation during network outages.
+I am sharing the code and troubleshooting notes so other owners can reuse the work instead of starting over. Contributions are welcome, whether they are fixes, tests on another model, or clearer documentation. I can only test the devices I own, so community participation is important to extending support.
 
-Opening the project is intended to make this work useful to others with similar needs. Users can reuse adapters and debugging knowledge instead of starting over, and additional models can join unified home setups when their compatibility is supported by evidence. Other brands should continue to use their own mature integrations. This repository covers the Panasonic scope listed below; cross-brand automation remains a broader home-system goal.
+## Supported devices
 
-More participants are welcome. Device owners can contribute observations and manual checks, developers can fix bugs or add models, and other contributors can improve documentation, translations, and setup guidance. One maintainer has limited hardware and time; community participation can broaden the evidence while keeping it reviewable and reproducible.
+| Device | Implemented features | Status |
+| --- | --- | --- |
+| F-75C5PJD purifier | Power, four modes, airflow, NanoeX, plasma, child lock, lights, display and state readings | Tested on my device and in use at home |
+| CS-JM35K410Q AC | Power, cooling/heating/drying, integer 16–30°C targets, six fan settings, directions, auxiliary heat, NanoeX, lights, sleep, powerful heating/cooling and soft cooling | Tested on my device and in use at home |
+| NR-E411BG-NH refrigerator | Three-zone temperatures and targets; quick freeze, quick ice, ice stop, fresh freezing, Eco Navi and NanoeX | Tested on my device and in use at home |
 
-Use, modification, forks, and contributions are welcome under the applicable licenses. Existing community attribution is retained. Supported models and verification remain limited: a result from one appliance must not be presented as compatibility with all Panasonic appliances. Publishing the code, debugging process, and known boundaries should make the work easier to continue and its reliability easier to assess.
+These results apply to the listed models. Similar names or category numbers may still use different protocols. See [device details](docs/DEVICES.md) for discovery rules and limitations. Reliable AC room temperature and unimplemented app features are outside the current support scope.
 
-## Supported scope
+## Relationship to other Panasonic projects
 
-| Appliance | Discovery rule | Implemented features | Verification boundary |
-| --- | --- | --- | --- |
-| F-75C5PJD air purifier | Category `0810`, normalized subtype starts with `75C5PJD`, cloud model exactly `F-75C5PJD` | Power, four modes, gentle/low/medium/high airflow, NanoeX, plasma, selected boolean controls and sensors | Historical reports confirm power in both directions and a disinfection-to-gentle transition. Other writes are not comprehensively verified. |
-| AC family used by CS-JM35K410Q | Category `0900`, normalized subtype starts with `AIRCONCOMMON202401` | Climate entity, cooling/heating/drying, integer 16–30°C targets, six fan settings, directions and selected auxiliary controls | Status retrieval is verified. One lamp direction has physical confirmation; other controls retain candidate mappings or incomplete validation. |
-| Fridge-19 family used by NR-E411BG-NH | Category `0100`, normalized subtype equals `FRIDGE19` | Three temperature zones and six feature switches | Eco Navi has historical app confirmation in both directions. Quick-ice success was reported without separate direction results. Other writes need verification. |
+This project reuses existing Chinese-cloud authentication and protocol knowledge while adding specific model support. The checked mcdona1d project supports controller-based central AC and a bathroom heater; rudyll focuses on ventilation and central AC; osk2 uses its Panasonic Smart App device definitions.
 
-Discovery matches a protocol family; it does not establish that every model in that family is compatible. Upstream ventilation and central-AC support tables are not this project's support table. See [device details](docs/DEVICES.md) for exact fields, constraints, and evidence.
+The main additions here are the `0810/75C5PJD` purifier, `AirconCommon-2024-01` AC and `Fridge-19` refrigerator. The [comparison](docs/COMPARISON.md) links the revisions checked. I would welcome collaboration when an existing adapter can solve the same problem.
 
-## Installation and credentials
+## Installation
 
-The deployed reference environment is Home Assistant 2026.10.4. Earlier versions have not been validated.
+My reference environment is Home Assistant 2026.10.4. Other versions have not been fully tested.
 
 1. Back up your HA configuration and existing integration directory.
 2. Copy `custom_components/panasonic_home_readonly` to `/config/custom_components/`.
 3. Restart Home Assistant.
-4. Open Settings → Devices & services → Add integration and search for **松下智家（本地验证）**.
-5. Enter your mainland China Panasonic account credentials only in the HA form.
+4. Under Settings → Devices & services → Add integration, search for **松下智家（本地验证）**.
+5. Enter your Panasonic account credentials in the HA form. Supported devices are discovered after login.
 
-To change credentials, use the integration entry's Reconfigure option. Existing credentials are replaced only after successful login and supported-device discovery. Preserve the historical `panasonic_home_readonly` domain and entity IDs when upgrading. Do not rename the directory to match the repository name.
+Use Reconfigure on the integration entry to change the account or password. New credentials are saved only after login and discovery succeed; a failed check leaves the old configuration in place.
 
-The domain contains `readonly` for compatibility, but this version has real control methods. “Locally validated” describes the development process, not local-only communication: the integration uses Panasonic's cloud. Some interface strings, including the existing `en.json`, remain Chinese; this English README does not claim a fully translated HA interface.
+Keep the historical `panasonic_home_readonly` folder name when upgrading. It preserves existing entity IDs and automations. The integration now includes controls despite that older name.
 
-## Behavior and limits
+## Everyday use
 
-- Polls every 60 seconds. Import, setup, discovery, and normal polling do not send device SET commands. Explicit entity/service calls can control appliances, including calls made by user-created HA automations. Installation does not create household automations.
-- Credentials are stored by HA's configuration-entry mechanism, not encrypted by this integration. Protect configuration files and backups.
-- Login can invalidate the mobile app session. Polling does not automatically log in again; reload or reconfigure when necessary.
-- Commands are sent once. A queued task or successful cloud response is not proof of physical execution. Read-back failure must not trigger an automatic resend.
-- AC `current_temperature` deliberately returns `None`: the room-temperature encoding is unverified, and raw value 128 is not a usable room reading.
-- Some purifier state comes from a device-list cache cross-checked against live fields. Cache freshness remains uncertain.
-- The bundled public certificate was historically trusted but its origin was not independently verified. Certificate and hostname checks remain enabled, with a compatibility exception scoped to the exact legacy certificate.
-- Candidate controls are currently exposed without a single experimental-feature switch. Physical verification is incomplete. See [known limitations](docs/LIMITATIONS.md).
+- Communication uses Panasonic's mainland China cloud, with state polling every 60 seconds. An internet connection is required.
+- Startup and normal polling only read state. Entity actions and HA automations that call them can control devices.
+- A command is sent once, followed by state confirmation. If it is not confirmed, check the app and appliance before trying again.
+- The mobile app and HA can invalidate each other's sessions. Reload or reconfigure the integration when the session expires.
+- HA stores credentials in its configuration entries. Protect the configuration directory and backups. See [security notes](SECURITY.md) for connection and certificate details.
 
-## Architecture and contributing
+I also use a separate AI WeChat tool to control the HA setup. That is an optional way of using the integration; the WeChat tool is maintained separately and is not included here.
 
-A configuration flow handles credentials and discovery. A client filters supported devices and numeric state fields. A shared coordinator polls state and serializes manual control/read-back operations. Six HA platforms expose sensors, binary sensors, switches, climate, selects, and numbers. Separate protocol modules validate purifier, AC, and refrigerator payloads; the transport fixes the HTTPS destination, rejects redirects and system proxies, and does not retry controls.
+## Contributing
 
-Contributions may include code, model-specific observations, manual verification, reproducible bug reports, documentation, or translation. Use synthetic fixtures and retain provenance. Separate implementation, observed state, app confirmation, and physical confirmation. Do not add guessed control endpoints, automatic command retries, implicit power-on behavior, or reset actions.
+Bug reports, fixes, model-specific tests and documentation improvements are welcome. For another model, start with its model name, protocol category and sanitized state fields so we can check whether an existing adapter fits.
 
-Offline checks require no credentials or network access:
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting changes. [Troubleshooting notes](docs/DEBUGGING_CASES.md) and the [maintenance plan](docs/ROADMAP.md) explain the current work. Detailed technical notes are primarily Chinese; English improvements are welcome.
+
+The basic checks need no account or network access:
 
 ```sh
 python test_readonly.py
@@ -70,22 +69,14 @@ python tools/privacy_scan.py
 python tools/review_check.py
 ```
 
-The review records 55 passing offline tests. GitHub Actions results must be checked separately. Offline tests do not prove physical behavior or HACS acceptance.
+See [validation records](docs/VALIDATION.md) for test results and environments. Automated tests check code behavior; appliance compatibility still needs users with the relevant hardware.
 
-- [Bilingual project overview](docs/PROJECT_OVERVIEW.md)
-- [Contribution guide, including English guidance](CONTRIBUTING.md)
-- [Receiving and sharing community changes](docs/SHARING_CHANGES.md)
-- [Architecture](docs/ARCHITECTURE.md)
-- [Sanitized debugging cases](docs/DEBUGGING_CASES.md)
-- [Security and privacy](SECURITY.md)
-- [Validation](docs/VALIDATION.md)
+## Thanks and licensing
 
-Detailed technical notes are currently primarily Chinese. English contributions are welcome.
+This integration uses [Home Assistant](https://www.home-assistant.io/)'s custom-integration framework. Thanks to the HA community for the platform and development resources. Install Home Assistant separately before installing this adapter.
 
-## Licensing and attribution
+I have used and built on work from [rudyll/panasonic_smart_china_r](https://github.com/rudyll/panasonic_smart_china_r), which acknowledges [mcdona1d/panasonic_smart_china](https://github.com/mcdona1d/panasonic_smart_china) as an earlier source. Their work and the wider community's contributions are appreciated. The applicable [MIT](LICENSE) and [Apache-2.0](LICENSES/Apache-2.0.txt) license texts are retained. See [third-party notices](THIRD_PARTY_NOTICES.md) for sources and changes. HA Core also uses [Apache-2.0](https://github.com/home-assistant/core/blob/dev/LICENSE.md).
 
-This project uses [Home Assistant](https://www.home-assistant.io/)'s custom-integration mechanism. We thank its community for the platform, entity model, and developer documentation. HA Core uses [Apache-2.0](https://github.com/home-assistant/core/blob/dev/LICENSE.md). This repository does not distribute HA Core, virtual machines, or user configurations. Users install HA separately. Publishing this code does not mean official HA inclusion, maintenance, or endorsement.
+Use, modification and sharing are welcome under the applicable licenses, with the original copyright and contributor attribution retained. New documentation and checking tools are intended to use MIT. I am still tracing some historical file-level sources; the information available is recorded in the [provenance notes](docs/PROVENANCE.md).
 
-The direct upstream, [rudyll/panasonic_smart_china_r](https://github.com/rudyll/panasonic_smart_china_r), uses MIT. Its original copyright and license remain in [LICENSE](LICENSE). The acknowledged earlier upstream, [mcdona1d/panasonic_smart_china](https://github.com/mcdona1d/panasonic_smart_china), uses Apache-2.0; that license is included in [LICENSES/Apache-2.0.txt](LICENSES/Apache-2.0.txt).
-
-Preserve applicable upstream notices and modification history. Do not relabel inherited work as entirely original MIT code. New review documentation and packaging are intended to use MIT; historical file-level attribution is not fully resolved. See [third-party notices](THIRD_PARTY_NOTICES.md) and the [provenance review](docs/PROVENANCE.md). Contributors retain copyright in their contributions; ownership is not transferred to the maintainer.
+This is an independent community project, not an official Panasonic or Home Assistant integration. It does not support international Comfort Cloud.

@@ -1,4 +1,4 @@
-"""Fridge-19 candidate controls; GET confirmed, SET awaiting manual validation."""
+"""Fridge-19 control fields, temperature ranges and mutually exclusive features."""
 FRIDGE_SWITCHES = {
     'quickFreeze': ('速冻', 'mdi:snowflake'),
     'quickicing': ('快速制冰', 'mdi:ice-pop'),

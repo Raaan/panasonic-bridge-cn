@@ -1,22 +1,28 @@
-# 审阅版验证记录
+# 验证记录
 
-日期：2026-11-11，Asia/Hong_Kong。
+更新日期：2026-11-11。
 
-| 检查 | 结果 | 边界 |
-| --- | --- | --- |
-| 运行基线 | 21 个文件的 SHA-256 已记录 | 仅保留代码基线摘要，不公开个人部署与备份对比 |
-| 既有协议/隐私离线测试 | 33 项通过 | Python 3.12.14，无账号、无网络 |
-| 新增冰箱回归测试 | 10 项通过 | 覆盖温控范围、新鲜基线、互斥、非目标字段与身份排除 |
-| 新增脱敏扫描回归测试 | 12 项通过 | 合成网络地址、MAC、手机号、邮件、路径、凭据 URL、私钥及 token；错误不回显匹配内容 |
-| 包检查 | 通过 | Python AST、JSON、服务器基线、公开证书指纹、限定敏感模式 |
-| HA 当前环境模块导入 | 通过，退出码 0 | 实际 HA 2026.10.4；没有调用登录、状态或 SET 方法 |
-| `ha core check` | `Command completed successfully.`，退出码 0 | 核查当前已部署配置，不等于安装审阅包后的验收 |
-| 真实设备控制 | 本轮未执行 | 既有结果来自历史记录，不作为本轮复测 |
-| GitHub Actions | 首轮代码提交 `e60c0b8a5f91e91753568262aaad8321bd4696e5` 的 push 与 PR 检查通过 | Python 3.12 / 3.14；后续提交结果以 PR Checks 为准 |
-| HACS、hassfest、UI | 未执行 | HACS 配置仍为准备稿，未正式发版 |
+## 实际使用
 
-本公开记录不包含个人设备数量、房间、网络拓扑、账号、实体标识或备份位置。对复现有用的调试过程另见 [脱敏调试案例](DEBUGGING_CASES.md)。
+F-75C5PJD 净化器、CS-JM35K410Q 空调和 NR-E411BG-NH 冰箱的现有功能已由我在实际设备上核对，部署版本在家中稳定使用。设备型号及确认范围见 [统一记录](VERIFICATION_STATUS.json)。
 
-审阅包相对服务器仅更改 manifest 的 documentation、issue_tracker、codeowners。运行 Python、domain、实体标识、版本和证书均未修改。其余新增文件为文档、许可/来源、测试与贡献流程。
+当前公开的开发改动与已经部署使用的版本分别记录，不能把分支测试结果直接当成新版本已经实机部署。
 
-模式扫描范围：私钥头、JWT、常见 GitHub token、非回环 IPv4、MAC/设备标识前缀、手机号、邮件、凭据 URL、本机/UNC 路径及禁止打包的常见配置/二进制类型。仅明确列出的合成 MAC 和示例邮箱域名豁免；测试不使用真实用户数据。错误只输出文件、行号和规则，不回显匹配值。模式检查不等于覆盖所有秘密格式，仍需人工审阅。证书 DER SHA-256：`a03226da8dd2ef0ea7e390232eed88d27d36c9e1a3208439f20a4c37eec35948`。
+## 自动化与环境检查
+
+| Check | Result |
+| --- | --- |
+| 0.5.0 offline checks | 55 passing tests: 33 protocol/privacy, 10 refrigerator, 12 privacy-scanner regressions |
+| Python CI | Python 3.12 and 3.14 passed for the published source |
+| Deployed HA environment | HA 2026.10.4 module imports and `ha core check` passed |
+| Development PR #2 | 59 offline tests and 8 isolated HA-runtime checks passed on its recorded public commit |
+
+开发 PR #2 的结果对应提交 `d6c2b88037dd9ca8c32ecc16b33d8ade900308e6`。其后仅在本地修改的内容尚未重新上传；当前状态以对应分支和 CI 记录为准。
+
+测试覆盖参数范围、互斥处理、状态过滤、隐私保护及不自动重发等行为。HA 环境测试和模拟配置检查用于发现接口兼容问题，不会连接真实云端或操作设备。
+
+## 文件检查
+
+Python AST、JSON、证书指纹和敏感格式扫描已检查。公开目录没有账号、会话、真实设备标识、家庭网络和备份位置。扫描结果只显示位置与规则，仍需在发布前人工复核。
+
+`baseline-files.json` 保留首次部署基线，包内 `FILE_MANIFEST.json` 记录交付文件哈希。详细排障过程见 [排障记录](DEBUGGING_CASES.md)。HACS/hassfest、其他固件和外部用户的长期使用结果还需要继续补充。

@@ -1,40 +1,36 @@
-# Third-party notices / 来源与署名
+# 来源与致谢 / Third-party notices
 
-核查日期：2026-11-11。此文件记录来源和实际修改范围，保留贡献者归属；不替代各许可证全文。
+这里记录项目参考的代码、协议资料及相应许可。核查日期为 2026-11-11；许可证全文保留在仓库中。
 
-## 直接上游
+## Home Assistant
 
-- 项目：[rudyll/panasonic_smart_china_r](https://github.com/rudyll/panasonic_smart_china_r)
-- 核查提交：`1566af4ef00df19b8dad186ea8a995f211ccf4aa`。
-- [该提交的许可证](https://github.com/rudyll/panasonic_smart_china_r/blob/1566af4ef00df19b8dad186ea8a995f211ccf4aa/LICENSE)：MIT，`Copyright (c) 2026 rudyll`。原文保留于根目录 LICENSE 及整合目录 LICENSE。
-- 本地交接明确以该项目为来源，登录派生、设备 token 与集成思路经本地工具和适配层复用。实际部署的整合不是该上游默认分支的原样副本。
-- 上游 README 明确将主干范围限定为新风和中央空调，并鼓励其他品类独立仓库发布。本项目净化器和冰箱范围与之相符；上游未为本项目提供维护或背书。
+项目通过 Home Assistant 的自定义整合机制运行，使用它的实体、配置和状态更新接口。感谢 HA 社区提供的框架及开发文档。
 
-## 运行平台 Home Assistant
+[home-assistant/core](https://github.com/home-assistant/core) 采用 [Apache-2.0](https://github.com/home-assistant/core/blob/dev/LICENSE.md)。使用者需要自行安装 HA，本仓库只提供松下整合，没有附带 HA 源码、虚拟机镜像或家庭配置。
 
-- 项目：[home-assistant/core](https://github.com/home-assistant/core)。其 [LICENSE.md](https://github.com/home-assistant/core/blob/dev/LICENSE.md) 为 Apache-2.0。
-- 本整合依赖 HA 的平台 API 和自定义整合加载机制；HA 本体由使用者另行安装，本包不重新分发其源码、虚拟机镜像或用户配置。
-- 感谢 Home Assistant 社区提供运行平台和开发文档。本项目是独立社区整合，不代表 HA 官方收录或背书。后续如复制 HA 源文件而非仅调用其 API，应在来源表中记录该文件及适用通知。
+## 直接参考的项目
 
-## 更早上游
+本项目参考和复用了 [rudyll/panasonic_smart_china_r](https://github.com/rudyll/panasonic_smart_china_r) 的认证和通信经验。核查版本为 `1566af4ef00df19b8dad186ea8a995f211ccf4aa`，其 MIT 许可中的版权信息为 `Copyright (c) 2026 rudyll`，原文保留在根目录及整合目录的 LICENSE 中。
 
-- 项目：[mcdona1d/panasonic_smart_china](https://github.com/mcdona1d/panasonic_smart_china)。由直接上游 README 明确署名。
-- 当前核查提交：`2be1474cd9d2f868ce576fadcc6445f42e5a8545`。这只是核查时的版本，不等于本地代码实际继承的历史基线。
-- [许可证](https://github.com/mcdona1d/panasonic_smart_china/blob/2be1474cd9d2f868ce576fadcc6445f42e5a8545/LICENSE)：Apache License 2.0。全文保留于 LICENSES/Apache-2.0.txt。
-- 已读取两条核查提交的完整递归文件树（均未截断），未发现独立 NOTICE 文件；另检查了相关认证、token、配置流、空调及协调器来源文件。这个结论覆盖固定提交，不覆盖全部历史提交。逐文件归属见 [来源表](docs/PROVENANCE.md)。
-- 不将直接上游的 MIT 标记理解为自动覆盖早期 Apache-2.0 贡献。对继承的 Apache 代码，保留适用版权、许可证、修改告知及若存在的 NOTICE；不得删除原权利人信息。新增文档及包装拟采用 MIT，不要求贡献者转让全部版权。
+该项目主要维护新风和中央空调，也建议其他品类以独立仓库继续适配。本项目在其基础上补充了所列净化器、空调和冰箱型号，具体区别见 [项目比较](docs/COMPARISON.md)。
 
-## 协议知识来源
+## 更早的来源
 
-- arthurfsy：直接上游 README 记载其最早公开松下云端登录算法。此为上游记载的致谢，未独立追溯最早原稿。
-- 空调候选枚举：本地 `protocols.py` 引用 Hassbian 帖子 `tid=17153` 第 5 页。该帖内容本轮未重新获取，不把帖子及其他机型的数值当作本机全面验证，也不复制帖子正文。
-- 冰箱 Fridge-19 与净化器协议：本地记录说明曾检查官方静态控制页，并以用户操作和状态对照校准。审阅包不包含厂商 APK、DEX、反编译源码、原始 JS、抓包或手册副本；不将厂商内容标成 MIT。
-- 直接上游 README 还感谢 omegaojian、dkong5ssss、accpowered 的新风研究。本包不收录对应新风控制器实现，不把他们列作本项目三类设备的实测者。
+rudyll 项目明确说明其基于 [mcdona1d/panasonic_smart_china](https://github.com/mcdona1d/panasonic_smart_china)。本次核查版本为 `2be1474cd9d2f868ce576fadcc6445f42e5a8545`，采用 Apache-2.0，全文保留在 [LICENSES/Apache-2.0.txt](LICENSES/Apache-2.0.txt)。
 
-## 相对上游及部署版的修改
+两条来源的许可和署名都继续保留。核查的两个提交中未发现独立 NOTICE 文件，相关认证、token、配置流和空调文件也已检查；这项记录对应指定版本，完整开发历史仍在整理。
 
-本地适配以独立 domain `panasonic_home_readonly` 实现三类设备过滤、严格参数构造、无控制重试、缓存交叉检查、TLS 兼容及六类 HA 实体。保留原有授权与贡献者归属，不宣称上述内容全部由 Raaan 原创。
+## 协议资料与社区贡献
 
-本次审阅版以已部署的 0.5.0 为基线。运行源码仅修改 manifest 的文档地址、问题地址与维护者元数据；Python 逻辑、domain、版本、实体 UID 和证书未更改。另增中英文文档、测试、CI、打包隐私检查与本来源说明。逐文件哈希见 docs/baseline-files.json；源文件保留历史只读注释，当前真实能力以实现和文档为准。个人服务器、本机与备份比较信息不放入公开包。
+- 直接上游感谢 arthurfsy 最早公开松下登录算法，本项目继续保留这项致谢。
+- 空调枚举曾参考 Hassbian `tid=17153` 第 5 页的公开讨论，来源链接保留在 `protocols.py` 中。
+- 净化器和 Fridge-19 的字段整理结合了官方静态控制资料及实际设备对照。厂商 APK、反编译代码、原始 JS 和抓包没有放进仓库。
+- 直接上游还感谢 omegaojian、dkong5ssss 和 accpowered 的新风研究。本项目没有收录对应的新风实现，这些致谢保留其原有范围。
 
-拟维护账号：[Raaan](https://github.com/Raaan)。社区可按适用许可证 fork、修改、提交 PR。首次公开发行前需要复核逐文件来源，不能仅凭 GitHub 自动检测的单一许可证标识宣布许可证链审查完成。
+## 本项目的修改
+
+适配工作包括三类设备识别、状态字段整理、请求参数检查、读回确认，以及六类 HA 实体。首次公开整理以部署版 0.5.0 为基础；后续开发稿增加了验证状态更新、英文配置文案、证书替换检查和隔离 HA 测试。
+
+原始文件哈希见 `docs/baseline-files.json`。开发稿的逐文件修改记录保存在其 `docs/source-changes.json` 中。已知文件来源和仍待补充的历史信息见 [文件来源](docs/PROVENANCE.md)。
+
+新增文档、贡献说明和检查工具计划采用 MIT。使用和分享时，请按对应许可保留版权信息、作者署名和已有修改说明。贡献者保留自己贡献的版权。
