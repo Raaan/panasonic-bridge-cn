@@ -12,7 +12,8 @@
 | HA 当前环境模块导入 | 通过，退出码 0 | 实际 HA 2026.10.4；没有调用登录、状态或 SET 方法 |
 | `ha core check` | `Command completed successfully.`，退出码 0 | 核查当前已部署配置，不等于安装审阅包后的验收 |
 | 真实设备控制 | 本轮未执行 | 既有结果来自历史记录，不作为本轮复测 |
-| GitHub Actions、HACS、hassfest、UI | 未执行 | CI 与 HACS 文件仅为准备稿 |
+| GitHub Actions | 首轮代码提交 `e60c0b8a5f91e91753568262aaad8321bd4696e5` 的 push 与 PR 检查通过 | Python 3.12 / 3.14；后续提交结果以 PR Checks 为准 |
+| HACS、hassfest、UI | 未执行 | HACS 配置仍为准备稿，未正式发版 |
 
 本公开记录不包含个人设备数量、房间、网络拓扑、账号、实体标识或备份位置。对复现有用的调试过程另见 [脱敏调试案例](DEBUGGING_CASES.md)。
 

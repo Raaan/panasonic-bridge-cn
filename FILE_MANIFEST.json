@@ -181,8 +181,8 @@
   },
   {
     "path": "docs/VALIDATION.md",
-    "bytes": 2137,
-    "sha256": "509cd39498e6219f5943a0882b7702568e3e850c2a604a932fd2a2c47a304fbd"
+    "bytes": 2306,
+    "sha256": "89b95062994d5b6485795d96fc2fecbf5c75336378b5f5ea2ee4af3488d8b260"
   },
   {
     "path": "hacs.json",
