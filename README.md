@@ -26,6 +26,10 @@
 
 空调目前没有可靠的室温读数；滤网复位等未实现功能也不在上述范围内。使用前请查看 [已知问题](docs/LIMITATIONS.md)。
 
+## 红外空调接入示例
+
+Panasonic CS-SFD13KQ10 可通过 BroadLink RM4C mini 和 SmartIR 接入 Home Assistant。本示例独立于本仓库的松下云端集成，包含原始红外样本、码表生成器和实机验证记录。详见 [红外接入示例](examples/panasonic-sfd13kq10-smartir/README.md)。
+
 ## 和现有松下项目的关系
 
 我参考和复用了现有中国区松下项目的认证与通信经验，重点补充它们当时未明确覆盖的具体型号。mcdona1d 项目主要支持线控中央空调和浴霸，rudyll 项目侧重新风与中央空调；osk2 项目面向另一套 Panasonic Smart App 设备定义。
